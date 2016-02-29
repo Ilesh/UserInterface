@@ -54,6 +54,7 @@ extension UILabel
         
     }
 }
+/*
 
 extension UILabel
 {
@@ -150,7 +151,7 @@ extension UILabel
     }
 }
 
-
+/*
 public class ClockLabel: UILabel
 {
     let timeFormatter = NSDateFormatter(timeStyle: .ShortStyle, dateStyle: .NoStyle)
@@ -251,6 +252,7 @@ public class ClockLabel: UILabel
         timer = nil
     }
 }
+*/
 
 //MARK: - Size Adjust
 
@@ -300,3 +302,4 @@ extension UILabel
         }
     }
 }
+*/

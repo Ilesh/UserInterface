@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Arithmetic
+import Geometry
+import Graphics
 
 // MARK: - CustomDebugStringConvertible
 
@@ -38,7 +41,7 @@ extension UICollectionView
     {
         for cell in visibleCells()
         {
-            if cell.bounds.contains(location.convert(fromView: self, toView: cell))
+            if cell.bounds.contains(convertPoint(location, toView: cell))
             {
                 return indexPathForCell(cell)
             }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Graphics
+import Collections
 
 public extension UINavigationController
 {
