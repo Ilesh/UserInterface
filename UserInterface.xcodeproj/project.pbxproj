@@ -7,9 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F91BA341C844427004CBDB9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8F91BA331C844427004CBDB9 /* Cartfile */; };
 		8FD875111C76293800181FA6 /* UserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD875101C76293800181FA6 /* UserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FD875181C76293800181FA6 /* UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD8750D1C76293800181FA6 /* UserInterface.framework */; };
 		8FD8751D1C76293800181FA6 /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8751C1C76293800181FA6 /* UserInterfaceTests.swift */; };
+		8FD8753A1C76295900181FA6 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875271C76295900181FA6 /* UIActivityIndicatorView.swift */; };
+		8FD8753B1C76295900181FA6 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875281C76295900181FA6 /* UIApplication.swift */; };
+		8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875291C76295900181FA6 /* UIButton.swift */; };
+		8FD8753D1C76295900181FA6 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752A1C76295900181FA6 /* UICollectionView.swift */; };
+		8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752B1C76295900181FA6 /* UIColor.swift */; };
+		8FD8753F1C76295900181FA6 /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752C1C76295900181FA6 /* UIDatePicker.swift */; };
+		8FD875401C76295900181FA6 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752D1C76295900181FA6 /* UIEdgeInsets.swift */; };
+		8FD875411C76295900181FA6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752E1C76295900181FA6 /* UIFont.swift */; };
+		8FD875421C76295900181FA6 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8752F1C76295900181FA6 /* UIImage.swift */; };
+		8FD875431C76295900181FA6 /* UIKitLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875301C76295900181FA6 /* UIKitLocalizedString.swift */; };
+		8FD875441C76295900181FA6 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875311C76295900181FA6 /* UILabel.swift */; };
+		8FD875451C76295900181FA6 /* UILayoutConstraintAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875321C76295900181FA6 /* UILayoutConstraintAxis.swift */; };
+		8FD875461C76295900181FA6 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875331C76295900181FA6 /* UINavigationBar.swift */; };
+		8FD875471C76295900181FA6 /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875341C76295900181FA6 /* UIPickerView.swift */; };
+		8FD875481C76295900181FA6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875351C76295900181FA6 /* UITableView.swift */; };
+		8FD875491C76295900181FA6 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875361C76295900181FA6 /* UITextView.swift */; };
+		8FD8754A1C76295900181FA6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875371C76295900181FA6 /* UIView.swift */; };
+		8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875381C76295900181FA6 /* UIViewController.swift */; };
+		8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875391C76295900181FA6 /* UIBezierPath.swift */; };
+		8FD875CC1C762C2900181FA6 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875CB1C762C2900181FA6 /* NSError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +44,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F91BA331C844427004CBDB9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		8FD8750D1C76293800181FA6 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD875101C76293800181FA6 /* UserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterface.h; sourceTree = "<group>"; };
 		8FD875121C76293800181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FD875171C76293800181FA6 /* UserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD8751C1C76293800181FA6 /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceTests.swift; sourceTree = "<group>"; };
 		8FD8751E1C76293800181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD875271C76295900181FA6 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
+		8FD875281C76295900181FA6 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		8FD875291C76295900181FA6 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		8FD8752A1C76295900181FA6 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		8FD8752B1C76295900181FA6 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		8FD8752C1C76295900181FA6 /* UIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
+		8FD8752D1C76295900181FA6 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		8FD8752E1C76295900181FA6 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8FD8752F1C76295900181FA6 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		8FD875301C76295900181FA6 /* UIKitLocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitLocalizedString.swift; sourceTree = "<group>"; };
+		8FD875311C76295900181FA6 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		8FD875321C76295900181FA6 /* UILayoutConstraintAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayoutConstraintAxis.swift; sourceTree = "<group>"; };
+		8FD875331C76295900181FA6 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		8FD875341C76295900181FA6 /* UIPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
+		8FD875351C76295900181FA6 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		8FD875361C76295900181FA6 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		8FD875371C76295900181FA6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8FD875381C76295900181FA6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8FD875391C76295900181FA6 /* UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
+		8FD875CB1C762C2900181FA6 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +95,7 @@
 		8FD875031C76293800181FA6 = {
 			isa = PBXGroup;
 			children = (
+				8F91BA331C844427004CBDB9 /* Cartfile */,
 				8FD8750F1C76293800181FA6 /* UserInterface */,
 				8FD8751B1C76293800181FA6 /* UserInterfaceTests */,
 				8FD8750E1C76293800181FA6 /* Products */,
@@ -71,6 +114,26 @@
 		8FD8750F1C76293800181FA6 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				8FD875271C76295900181FA6 /* UIActivityIndicatorView.swift */,
+				8FD875281C76295900181FA6 /* UIApplication.swift */,
+				8FD875291C76295900181FA6 /* UIButton.swift */,
+				8FD8752A1C76295900181FA6 /* UICollectionView.swift */,
+				8FD8752B1C76295900181FA6 /* UIColor.swift */,
+				8FD8752C1C76295900181FA6 /* UIDatePicker.swift */,
+				8FD8752D1C76295900181FA6 /* UIEdgeInsets.swift */,
+				8FD8752E1C76295900181FA6 /* UIFont.swift */,
+				8FD8752F1C76295900181FA6 /* UIImage.swift */,
+				8FD875301C76295900181FA6 /* UIKitLocalizedString.swift */,
+				8FD875311C76295900181FA6 /* UILabel.swift */,
+				8FD875321C76295900181FA6 /* UILayoutConstraintAxis.swift */,
+				8FD875331C76295900181FA6 /* UINavigationBar.swift */,
+				8FD875341C76295900181FA6 /* UIPickerView.swift */,
+				8FD875351C76295900181FA6 /* UITableView.swift */,
+				8FD875361C76295900181FA6 /* UITextView.swift */,
+				8FD875371C76295900181FA6 /* UIView.swift */,
+				8FD875381C76295900181FA6 /* UIViewController.swift */,
+				8FD875CB1C762C2900181FA6 /* NSError.swift */,
+				8FD875391C76295900181FA6 /* UIBezierPath.swift */,
 				8FD875101C76293800181FA6 /* UserInterface.h */,
 				8FD875121C76293800181FA6 /* Info.plist */,
 			);
@@ -177,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F91BA341C844427004CBDB9 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +258,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD8753B1C76295900181FA6 /* UIApplication.swift in Sources */,
+				8FD875461C76295900181FA6 /* UINavigationBar.swift in Sources */,
+				8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */,
+				8FD875481C76295900181FA6 /* UITableView.swift in Sources */,
+				8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */,
+				8FD875431C76295900181FA6 /* UIKitLocalizedString.swift in Sources */,
+				8FD875401C76295900181FA6 /* UIEdgeInsets.swift in Sources */,
+				8FD875441C76295900181FA6 /* UILabel.swift in Sources */,
+				8FD8753A1C76295900181FA6 /* UIActivityIndicatorView.swift in Sources */,
+				8FD875471C76295900181FA6 /* UIPickerView.swift in Sources */,
+				8FD875451C76295900181FA6 /* UILayoutConstraintAxis.swift in Sources */,
+				8FD875491C76295900181FA6 /* UITextView.swift in Sources */,
+				8FD8753D1C76295900181FA6 /* UICollectionView.swift in Sources */,
+				8FD875411C76295900181FA6 /* UIFont.swift in Sources */,
+				8FD8753F1C76295900181FA6 /* UIDatePicker.swift in Sources */,
+				8FD8754A1C76295900181FA6 /* UIView.swift in Sources */,
+				8FD875421C76295900181FA6 /* UIImage.swift in Sources */,
+				8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */,
+				8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */,
+				8FD875CC1C762C2900181FA6 /* NSError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +392,7 @@
 		8FD875221C76293800181FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +403,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterface";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8FD875231C76293800181FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +463,7 @@
 				8FD875231C76293800181FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FD875241C76293800181FA6 /* Build configuration list for PBXNativeTarget "UserInterfaceTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +472,7 @@
 				8FD875261C76293800181FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
