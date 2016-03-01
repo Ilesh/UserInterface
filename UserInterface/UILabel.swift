@@ -33,7 +33,7 @@ extension UILabel
 extension UILabel
 {
     /// crossfades the existing text with the `text` parameters in `duration`seconds
-    public func setText(text: String, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
+    public func setText(text: String?, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
     {
         if (ifDifferent && text != self.text) || !ifDifferent
         {
