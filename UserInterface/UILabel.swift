@@ -33,11 +33,11 @@ extension UILabel
 extension UILabel
 {
     /// crossfades the existing text with the `text` parameters in `duration`seconds
-    public func setText(text: String, duration: Double, ifDifferent: Bool = true)
+    public func setText(text: String, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
     {
         if (ifDifferent && text != self.text) || !ifDifferent
         {
-            UIView.transitionWithView(self, duration: duration, options: [.TransitionCrossDissolve], animations: { self.text = text }, completion: nil)
+            UIView.transitionWithView(self, duration: duration, options: [.TransitionCrossDissolve], animations: { self.text = text }, completion: completion)
         }
     }
 }
