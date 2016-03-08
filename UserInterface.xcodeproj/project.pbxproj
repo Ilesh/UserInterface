@@ -10,7 +10,6 @@
 		8F02BE291C857BAE00BA2646 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */; };
 		8F8D90EA1C84632900142128 /* Arithmetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E61C84632900142128 /* Arithmetic.framework */; };
 		8F8D90EB1C84632900142128 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E71C84632900142128 /* Collections.framework */; };
-		8F8D90EC1C84632900142128 /* Geometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E81C84632900142128 /* Geometry.framework */; };
 		8F8D90ED1C84632900142128 /* Graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E91C84632900142128 /* Graphics.framework */; };
 		8F91BA341C844427004CBDB9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8F91BA331C844427004CBDB9 /* Cartfile */; };
 		8FD875111C76293800181FA6 /* UserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD875101C76293800181FA6 /* UserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,7 +50,6 @@
 		8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		8F8D90E61C84632900142128 /* Arithmetic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arithmetic.framework; path = Carthage/Build/iOS/Arithmetic.framework; sourceTree = "<group>"; };
 		8F8D90E71C84632900142128 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
-		8F8D90E81C84632900142128 /* Geometry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Geometry.framework; path = Carthage/Build/iOS/Geometry.framework; sourceTree = "<group>"; };
 		8F8D90E91C84632900142128 /* Graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Graphics.framework; path = Carthage/Build/iOS/Graphics.framework; sourceTree = "<group>"; };
 		8F91BA331C844427004CBDB9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		8FD8750D1C76293800181FA6 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +86,6 @@
 			files = (
 				8F8D90EA1C84632900142128 /* Arithmetic.framework in Frameworks */,
 				8F8D90EB1C84632900142128 /* Collections.framework in Frameworks */,
-				8F8D90EC1C84632900142128 /* Geometry.framework in Frameworks */,
 				8F8D90ED1C84632900142128 /* Graphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +106,6 @@
 			children = (
 				8F8D90E61C84632900142128 /* Arithmetic.framework */,
 				8F8D90E71C84632900142128 /* Collections.framework */,
-				8F8D90E81C84632900142128 /* Geometry.framework */,
 				8F8D90E91C84632900142128 /* Graphics.framework */,
 				8F91BA331C844427004CBDB9 /* Cartfile */,
 				8FD8750F1C76293800181FA6 /* UserInterface */,

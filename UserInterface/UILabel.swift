@@ -32,12 +32,22 @@ extension UILabel
 
 extension UILabel
 {
-    /// crossfades the existing text with the `text` parameters in `duration`seconds
+    /** Crossfades the existing text with the `text` parameters in `duration` seconds
+     
+     - parameter text: the new text
+     - parameter duration: the time to spend crossfading
+     - parameter ifDifferent: if `true` the change is only animated if it differs from the already set text, defaults to `true`
+     - parameter completion: closure that is called when the animation finishes.
+    */
     public func setText(text: String?, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
     {
         if (ifDifferent && text != self.text) || !ifDifferent
         {
             UIView.transitionWithView(self, duration: duration, options: [.TransitionCrossDissolve], animations: { self.text = text }, completion: completion)
+        }
+        else
+        {
+            completion?(false)
         }
     }
 }

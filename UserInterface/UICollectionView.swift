@@ -8,7 +8,6 @@
 
 import UIKit
 import Arithmetic
-import Geometry
 import Graphics
 
 // MARK: - CustomDebugStringConvertible
@@ -211,7 +210,7 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
                 swap(&higher.x, &lower.x)
             }
             
-            attrs.frame = CGRect(center: lerp(lower, higher, factor), size: CGSize(widthAndHeight: l))
+            attrs.frame = CGRect(center: (lower, higher) ◊ factor, size: CGSize(l))
             
             attrs.zIndex = zIndexForIndexPath(indexPath)
             
