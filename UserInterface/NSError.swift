@@ -8,14 +8,10 @@
 
 import Foundation
 
-/*
 public extension NSError
 {
-    static let defaultAsyncErrorHandler : ((NSError) -> Void) =  { (error: NSError) -> Void in error.presentAsAlert() }
-    
-    func presentAsAlert(handler:(() -> ())? = nil)
+    func presentAsAlert(handler:((UIAlertAction) -> ())? = nil)
     {
         UIApplication.topViewController()?.presentErrorAsAlert(self, animated: true, handler: handler)
     }
 }
-*/
