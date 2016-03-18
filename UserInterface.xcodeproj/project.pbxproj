@@ -33,7 +33,7 @@
 		8FD8754A1C76295900181FA6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875371C76295900181FA6 /* UIView.swift */; };
 		8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875381C76295900181FA6 /* UIViewController.swift */; };
 		8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875391C76295900181FA6 /* UIBezierPath.swift */; };
-		8FD875CC1C762C2900181FA6 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875CB1C762C2900181FA6 /* NSError.swift */; };
+		8FD875CC1C762C2900181FA6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875CB1C762C2900181FA6 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		8FD875371C76295900181FA6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8FD875381C76295900181FA6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8FD875391C76295900181FA6 /* UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
-		8FD875CB1C762C2900181FA6 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		8FD875CB1C762C2900181FA6 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 				8FD875361C76295900181FA6 /* UITextView.swift */,
 				8FD875371C76295900181FA6 /* UIView.swift */,
 				8FD875381C76295900181FA6 /* UIViewController.swift */,
-				8FD875CB1C762C2900181FA6 /* NSError.swift */,
+				8FD875CB1C762C2900181FA6 /* Error.swift */,
 				8FD875391C76295900181FA6 /* UIBezierPath.swift */,
 				8FD875101C76293800181FA6 /* UserInterface.h */,
 				8FD875121C76293800181FA6 /* Info.plist */,
@@ -289,7 +289,7 @@
 				8FD8754A1C76295900181FA6 /* UIView.swift in Sources */,
 				8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */,
 				8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */,
-				8FD875CC1C762C2900181FA6 /* NSError.swift in Sources */,
+				8FD875CC1C762C2900181FA6 /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

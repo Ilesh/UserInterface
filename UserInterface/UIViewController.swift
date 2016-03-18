@@ -175,21 +175,4 @@ extension UIViewController
     }
 }
 
-// MARK: - Error
-
-public extension UIViewController
-{
-    func presentErrorAsAlert(error: NSError?, animated: Bool = true, handler: ((UIAlertAction) -> ())? = nil)
-    {
-        guard let error = error else { return }
-        
-        let alertController = UIAlertController(title: error.localizedDescription, message: error.localizedFailureReason, preferredStyle: .Alert)
-        
-        alertController.addAction(UIAlertAction(title: UIKitLocalizedString("Done"), style: .Default, handler: handler))
-        
-        //TODO: localizedRecoveryOptions
-        
-        presentViewController(alertController, animated: animated) { debugPrint("Showing error: \(self)") }
-    }
-}
 
