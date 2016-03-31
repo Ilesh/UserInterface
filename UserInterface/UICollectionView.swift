@@ -9,6 +9,7 @@
 import UIKit
 import Arithmetic
 import Graphics
+import Collections
 
 // MARK: - CustomDebugStringConvertible
 
@@ -41,21 +42,6 @@ extension UICollectionView
         for cell in visibleCells()
         {
             if cell.bounds.contains(convertPoint(location, toView: cell))
-            {
-                return indexPathForCell(cell)
-            }
-        }
-        
-        return nil
-    }
-    
-    public func indexPathForView(view: UIView) -> NSIndexPath?
-    {
-        let superviews = view.superviews
-        
-        if let myIndex = superviews.indexOf(self)
-        {
-            if let cell = Array(superviews[myIndex..<superviews.count]).cast(UICollectionViewCell).first
             {
                 return indexPathForCell(cell)
             }
