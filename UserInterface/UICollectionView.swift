@@ -221,7 +221,104 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
     }
 }
 
+// MARK: - Sections
 
+extension UICollectionView
+{
+    private func indexSet(sections: [Int]) -> NSIndexSet
+    {
+        let indexSet = NSMutableIndexSet()
+        
+        sections.forEach { indexSet.addIndex($0)}
+
+        return indexSet
+    }
+    
+    public func insertSections(sections: Int...)
+    {
+        insertSections( indexSet(sections) )
+    }
+    
+    public func insertSection(section: Int?)
+    {
+        guard let section = section else { return }
+        
+        insertSections(NSIndexSet(index: section))
+    }
+    
+    
+    public func deleteSections(sections: Int...)
+    {
+        deleteSections( indexSet(sections) )
+    }
+    
+    public func deleteSection(section: Int?)
+    {
+        guard let section = section else { return }
+        
+        deleteSections(NSIndexSet(index: section))
+    }
+    
+    
+    public func reloadSections(sections: Int...)
+    {
+        reloadSections( indexSet(sections) )
+    }
+    
+    public func reloadSection(section: Int?)
+    {
+        guard let section = section else { return }
+        
+        reloadSections(NSIndexSet(index: section))
+    }
+    
+    // MARK: Items
+    
+    public func insertItemAtIndexPath(indexPath: NSIndexPath?)
+    {
+        guard let indexPath = indexPath else { return }
+        
+        insertItemsAtIndexPaths( [indexPath] )
+    }
+    
+    public func deleteItemAtIndexPath(indexPath: NSIndexPath?)
+    {
+        guard let indexPath = indexPath else { return }
+        
+        deleteItemsAtIndexPaths( [indexPath] )
+    }
+    
+    public func reloadItemAtIndexPath(indexPath: NSIndexPath?)
+    {
+        guard let indexPath = indexPath else { return }
+        
+        reloadItemsAtIndexPaths( [indexPath] )
+    }
+    
+    public func moveItemFromIndexPath(indexPath: NSIndexPath?, toIndexPath newIndexPath: NSIndexPath?)
+    {
+        guard let fromIndexPath = indexPath, let toIndexPath = newIndexPath else { return }
+        
+        moveItemAtIndexPath(fromIndexPath, toIndexPath: toIndexPath)
+    }
+}
+
+// MARK: - Lookup
+
+extension UICollectionView
+{
+    public func numberOfItemsInSection(section: Int?) -> Int
+    {
+        guard let section = section else { return 0 }
+        
+        return numberOfItemsInSection(section)
+    }
+
+    public func numberOfItemsInSectionForIndexPath(indexPath: NSIndexPath?) -> Int
+    {
+        return numberOfItemsInSection(indexPath?.section)
+    }
+}
 
 
 //MARK: - FlowLayout
