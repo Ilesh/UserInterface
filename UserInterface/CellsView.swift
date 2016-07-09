@@ -11,7 +11,7 @@ import Graphics
 
 public protocol CellsView
 {
-    typealias Cell : UIView
+    associatedtype Cell : UIView
     
     func currentlyVisibleCells() -> Set<Cell>
     

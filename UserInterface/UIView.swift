@@ -15,8 +15,8 @@ extension UIView
 {
     @IBInspectable
     public var cornerRadius : CGFloat
-    {
-    
+        {
+        
         get { return layer.cornerRadius }
         set { layer.cornerRadius = abs(CGFloat(Int(newValue * 100)) / 100) }
         
@@ -125,15 +125,17 @@ public extension UIView
     }
     
     var superviews : [UIView]
+    {
+        var superviews = Array<UIView>()
+        
+        var view = superview
+        while view != nil
         {
-            var superviews = Array<UIView>()
-            
-            for var view = superview; view != nil; view = view?.superview
-            {
-                superviews.append(view!)
-            }
-            
-            return superviews.reverse()
+            superviews.append(view!)
+            view = view?.superview
+        }
+        
+        return superviews.reverse()
     }
     
     
@@ -145,15 +147,14 @@ public extension UIView
      */
     func closestSuperviewOfType<T>(type: T.Type) -> T?
     {
-        for var view = superview; view != nil; view = view?.superview
+        if let t = superview as? T
         {
-            if let t = view as? T
-            {
-                return t
-            }
+            return t
         }
-        
-        return nil
+        else
+        {
+            return superview?.closestSuperviewOfType(T)
+        }
     }
     
     func subviewsOfType<T>(type: T.Type) -> [T]

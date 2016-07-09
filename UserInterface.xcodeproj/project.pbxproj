@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F02BE291C857BAE00BA2646 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */; };
+		8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */; };
 		8F8D90EA1C84632900142128 /* Arithmetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E61C84632900142128 /* Arithmetic.framework */; };
 		8F8D90EB1C84632900142128 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E71C84632900142128 /* Collections.framework */; };
 		8F8D90ED1C84632900142128 /* Graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E91C84632900142128 /* Graphics.framework */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedCollectionViewController.swift; sourceTree = "<group>"; };
 		8F8D90E61C84632900142128 /* Arithmetic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arithmetic.framework; path = Carthage/Build/iOS/Arithmetic.framework; sourceTree = "<group>"; };
 		8F8D90E71C84632900142128 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
 		8F8D90E91C84632900142128 /* Graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Graphics.framework; path = Carthage/Build/iOS/Graphics.framework; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				8FD875291C76295900181FA6 /* UIButton.swift */,
 				8FA50D7C1CAD287C005D28B6 /* CellsView.swift */,
 				8FD8752A1C76295900181FA6 /* UICollectionView.swift */,
+				8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */,
 				8FD8752B1C76295900181FA6 /* UIColor.swift */,
 				8FD8752C1C76295900181FA6 /* UIDatePicker.swift */,
 				8FD8752D1C76295900181FA6 /* UIEdgeInsets.swift */,
@@ -404,6 +407,7 @@
 				8FA50D7D1CAD287C005D28B6 /* CellsView.swift in Sources */,
 				8FD8753F1C76295900181FA6 /* UIDatePicker.swift in Sources */,
 				8FD8754A1C76295900181FA6 /* UIView.swift in Sources */,
+				8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */,
 				8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */,
 				8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */,
 				8FD875CC1C762C2900181FA6 /* Error.swift in Sources */,
@@ -647,6 +651,7 @@
 				8FA50D931CAD2CFE005D28B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FD875071C76293800181FA6 /* Build configuration list for PBXProject "UserInterface" */ = {
 			isa = XCConfigurationList;

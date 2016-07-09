@@ -28,7 +28,8 @@ public extension UIViewController
         
         alertController.addAction(UIAlertAction(title: UIKitLocalizedString("Done"), style: .Default, handler: handler))
         
-        presentViewController(alertController, animated: animated) { debugPrint("Showing error: \(self)") }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(alertController, animated: animated) { debugPrint("Showing error: \(self)") } } )
     }
 
     func presentErrorAsAlert(error: NSError?, animated: Bool = true, handler: ((UIAlertAction) -> ())? = nil)
@@ -41,7 +42,8 @@ public extension UIViewController
         
         //TODO: localizedRecoveryOptions
         
-        presentViewController(alertController, animated: animated) { debugPrint("Showing error: \(self)") }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(alertController, animated: animated) { debugPrint("Showing error: \(self)") } } )
     }
 
 }
