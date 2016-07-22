@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8F02BE291C857BAE00BA2646 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */; };
+		8F33CEDA1D41F9F30085BD56 /* UIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33CED91D41F9F30085BD56 /* UIView+Hierarchy.swift */; };
+		8F33CEDC1D41FA250085BD56 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33CEDB1D41FA250085BD56 /* UISlider.swift */; };
+		8F33CEDE1D41FC0C0085BD56 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33CEDD1D41FC0C0085BD56 /* UIView+Convenience.swift */; };
+		8F33CEE01D41FD1A0085BD56 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33CEDF1D41FD1A0085BD56 /* UIView+Snapshot.swift */; };
 		8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */; };
 		8F8D90EA1C84632900142128 /* Arithmetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E61C84632900142128 /* Arithmetic.framework */; };
 		8F8D90EB1C84632900142128 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E71C84632900142128 /* Collections.framework */; };
@@ -87,6 +91,10 @@
 
 /* Begin PBXFileReference section */
 		8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		8F33CED91D41F9F30085BD56 /* UIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		8F33CEDB1D41FA250085BD56 /* UISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
+		8F33CEDD1D41FC0C0085BD56 /* UIView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
+		8F33CEDF1D41FD1A0085BD56 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedCollectionViewController.swift; sourceTree = "<group>"; };
 		8F8D90E61C84632900142128 /* Arithmetic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arithmetic.framework; path = Carthage/Build/iOS/Arithmetic.framework; sourceTree = "<group>"; };
 		8F8D90E71C84632900142128 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
@@ -215,10 +223,14 @@
 				8FD875321C76295900181FA6 /* UILayoutConstraintAxis.swift */,
 				8FD875331C76295900181FA6 /* UINavigationBar.swift */,
 				8FD875341C76295900181FA6 /* UIPickerView.swift */,
+				8F33CEDB1D41FA250085BD56 /* UISlider.swift */,
 				8F02BE281C857BAE00BA2646 /* UIStoryboardSegue.swift */,
 				8FD875351C76295900181FA6 /* UITableView.swift */,
 				8FD875361C76295900181FA6 /* UITextView.swift */,
 				8FD875371C76295900181FA6 /* UIView.swift */,
+				8F33CEDF1D41FD1A0085BD56 /* UIView+Snapshot.swift */,
+				8F33CED91D41F9F30085BD56 /* UIView+Hierarchy.swift */,
+				8F33CEDD1D41FC0C0085BD56 /* UIView+Convenience.swift */,
 				8FD875381C76295900181FA6 /* UIViewController.swift */,
 				8FD875CB1C762C2900181FA6 /* Error.swift */,
 				8FD875391C76295900181FA6 /* UIBezierPath.swift */,
@@ -393,6 +405,8 @@
 				8FD875461C76295900181FA6 /* UINavigationBar.swift in Sources */,
 				8F02BE291C857BAE00BA2646 /* UIStoryboardSegue.swift in Sources */,
 				8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */,
+				8F33CEE01D41FD1A0085BD56 /* UIView+Snapshot.swift in Sources */,
+				8F33CEDE1D41FC0C0085BD56 /* UIView+Convenience.swift in Sources */,
 				8FD875481C76295900181FA6 /* UITableView.swift in Sources */,
 				8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */,
 				8FD875431C76295900181FA6 /* UIKitLocalizedString.swift in Sources */,
@@ -401,11 +415,13 @@
 				8FD8753A1C76295900181FA6 /* UIActivityIndicatorView.swift in Sources */,
 				8FD875471C76295900181FA6 /* UIPickerView.swift in Sources */,
 				8FD875451C76295900181FA6 /* UILayoutConstraintAxis.swift in Sources */,
+				8F33CEDA1D41F9F30085BD56 /* UIView+Hierarchy.swift in Sources */,
 				8FD875491C76295900181FA6 /* UITextView.swift in Sources */,
 				8FD8753D1C76295900181FA6 /* UICollectionView.swift in Sources */,
 				8FD875411C76295900181FA6 /* UIFont.swift in Sources */,
 				8FA50D7D1CAD287C005D28B6 /* CellsView.swift in Sources */,
 				8FD8753F1C76295900181FA6 /* UIDatePicker.swift in Sources */,
+				8F33CEDC1D41FA250085BD56 /* UISlider.swift in Sources */,
 				8FD8754A1C76295900181FA6 /* UIView.swift in Sources */,
 				8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */,
 				8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */,

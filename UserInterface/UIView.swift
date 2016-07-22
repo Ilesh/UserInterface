@@ -110,95 +110,6 @@ public extension UIView
     }
 }
 
-// MARK: - Hierarchy
-
-public extension UIView
-{
-    func addToSuperView(optionalSuperView: UIView?)
-    {
-        if superview != optionalSuperView
-        {
-            removeFromSuperview()
-            
-            optionalSuperView?.addSubview(self)
-        }
-    }
-    
-    var superviews : [UIView]
-    {
-        var superviews = Array<UIView>()
-        
-        var view = superview
-        while view != nil
-        {
-            superviews.append(view!)
-            view = view?.superview
-        }
-        
-        return superviews.reverse()
-    }
-    
-    
-    /**
-     Ascends the superview hierarchy until a view of the specified type is encountered
-     
-     - parameter type: the (super)type of view to look for
-     - returns: the first superview in the hierarchy encountered that is of the specified type
-     */
-    func closestSuperviewOfType<T>(type: T.Type) -> T?
-    {
-        if let t = superview as? T
-        {
-            return t
-        }
-        else
-        {
-            return superview?.closestSuperviewOfType(T)
-        }
-    }
-    
-    func subviewsOfType<T>(type: T.Type) -> [T]
-    {
-        return subviews.reduce(subviews.cast(T), combine: { $0 + $1.subviewsOfType(T) } )
-    }
-    
-    /**
-     does a breadth-first search of the subview hierarchy
-     
-     - parameter type: the (super)type of view to look for
-     - returns: an array of views of the specified type
-     */
-    func closestSubviewsOfType<T>(type: T.Type) -> [T]
-    {
-        var views = subviews
-        
-        while !views.isEmpty
-        {
-            let Ts = views.cast(T)
-            
-            if !Ts.isEmpty
-            {
-                return Ts
-            }
-            
-            views = views.flatMap { $0.subviews }
-            //            views = views.reduce([]) { $0 + $1.subviews }
-        }
-        
-        return []
-    }
-    
-    /**
-     does a breadth-first search of the subview hierarchy
-     
-     - parameter type: the type of view to look for
-     - returns: first view of the specified type found
-     */
-    func firstSubviewOfType<T>(type: T.Type) -> T?
-    {
-        return closestSubviewsOfType(type).first
-    }
-}
 
 //MARK: - First Responder
 
@@ -231,25 +142,6 @@ public extension UIView
     func frameInView(view: UIView) -> CGRect
     {
         return bounds.convert(fromView: self, toView: view)
-    }
-}
-
-// MARK: - Image
-
-public extension UIView
-{
-    func snapshot() -> UIImage
-    {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
-        
-        defer { UIGraphicsEndImageContext() }
-        
-        if let context = UIGraphicsGetCurrentContext()
-        {
-            layer.renderInContext(context)
-        }
-        
-        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
 
