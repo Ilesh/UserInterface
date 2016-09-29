@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ofd-TC-4KT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Dragging-->
+        <scene sceneID="wUO-cK-4fd">
+            <objects>
+                <viewController id="Ofd-TC-4KT" customClass="DraggingViewController" customModule="UserInterfaceDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iFR-dv-M5D"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxF-Ri-dwJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yg5-sW-hLC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-74-HHj">
+                                <rect key="frame" x="61" y="102" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBB-pM-hjb">
+                                <rect key="frame" x="196" y="175" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.86817904459999995" blue="0.071721377310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dragging" id="ahh-fM-uVD"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="draggableViews" destination="TBB-pM-hjb" collectionClass="NSMutableArray" id="Qw5-VN-Uw4"/>
+                        <outletCollection property="draggableViews" destination="YSu-74-HHj" collectionClass="NSMutableArray" id="qxh-f5-Cj1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7h-mz-2MQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="368"/>
+        </scene>
+    </scenes>
+</document>

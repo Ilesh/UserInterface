@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIApplication
 {
-    public class func topViewController(base: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController) -> UIViewController?
+    public class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?
     {
         if let nav = base as? UINavigationController
         {
@@ -52,7 +52,7 @@ extension UIViewController
                 
                 if childViewController.isViewLoadedAndAddedToWindow()
                 {
-                    return view.bounds.intersects(view.convertRect(childViewController.view.bounds, fromView: childViewController.view))
+                    return view.bounds.intersects(view.convert(childViewController.view.bounds, from: childViewController.view))
                 }
                 
                 return false
@@ -67,7 +67,7 @@ extension UIViewController
 
     public func isViewLoadedAndAddedToWindow() -> Bool
     {
-        if isViewLoaded()
+        if isViewLoaded
         {
             if view.window != nil
             {
@@ -101,16 +101,16 @@ extension UISplitViewController
 {
     override public var visibleViewControllers : [UIViewController]
         {
-            if collapsed
+            if isCollapsed
             {
                 return viewControllers.first?.visibleViewControllers ?? super.visibleViewControllers
             }
             
             switch displayMode
             {
-            case .AllVisible, .PrimaryOverlay, .Automatic:
+            case .allVisible, .primaryOverlay, .automatic:
                 return viewControllers.flatMap { $0.visibleViewControllers }
-            case .PrimaryHidden:
+            case .primaryHidden:
                 return viewControllers.last?.visibleViewControllers ?? super.visibleViewControllers
                 
             }

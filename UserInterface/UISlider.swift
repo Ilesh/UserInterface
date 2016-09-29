@@ -15,25 +15,25 @@ extension UISlider
     /// The current drawing rectangle for the slider’s track in the sliders coordinate-space, given the current bounds of the slider
     public var currentTrackRect : CGRect
     {
-        return trackRectForBounds(bounds)
+        return trackRect(forBounds: bounds)
     }
     
     /// The current drawing rectangle for the thumb image in the sliders coordinate-space, given the current bounds, track rectangle, and value of the slider
     public var currentThumbRect : CGRect
     {
-        return thumbRectForBounds(bounds, trackRect:trackRectForBounds(bounds), value:value)
+        return thumbRect(forBounds: bounds, trackRect:trackRect(forBounds: bounds), value:value)
     }
 
     /// Centers `view` on the thumb image, given the current bounds and value of the slider
-    public func centerViewOnThumb(view: UIView)
+    public func centerViewOnThumb(_ view: UIView)
     {
-        view.center = convertPoint(currentThumbRect.center, toView: view.superview)
+        view.center = convert(currentThumbRect.center, to: view.superview)
     }
 
     /// Sets `view`s frame to match the drawing rectangle of the thumb image, given the current bounds and value of the slider
-    public func frameViewOnThumb(view: UIView)
+    public func frameViewOnThumb(_ view: UIView)
     {
-        view.frame = convertRect(currentThumbRect, toView: view.superview)
+        view.frame = convert(currentThumbRect, to: view.superview)
     }
     
     var currentThumbImageMidX : CGFloat

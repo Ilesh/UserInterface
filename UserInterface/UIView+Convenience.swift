@@ -11,7 +11,7 @@ import Foundation
 public extension UIView
 {
     /// Adds `self` to a new superview. I `optionalSuperView` parameter equal to current superview, nothing happens, if it is nil `self` is removed from any current superview
-    func addToSuperView(optionalSuperView: UIView?)
+    func addToSuperView(_ optionalSuperView: UIView?)
     {
         guard superview != optionalSuperView else { return }
         

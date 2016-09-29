@@ -14,11 +14,11 @@ public extension UILayoutConstraintAxis
         {
             switch self
             {
-            case .Vertical:
-                return .Horizontal
+            case .vertical:
+                return .horizontal
                 
-            case .Horizontal:
-                return .Vertical
+            case .horizontal:
+                return .vertical
             }
     }
 }

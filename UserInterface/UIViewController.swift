@@ -10,30 +10,11 @@ import UIKit
 import Graphics
 import Collections
 
-public extension UINavigationController
-{
-    func popViewControllerWithHandler(completion: ()->())
-    {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
-        popViewControllerAnimated(true)
-        CATransaction.commit()
-    }
-    
-    func pushViewController(viewController: UIViewController, completion: ()->())
-    {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
-        pushViewController(viewController, animated: true)
-        CATransaction.commit()
-    }
-}
-
 //MARK: - Cover View
 
 public extension UIViewController
 {
-    private class CoverView : UIView
+    fileprivate class CoverView : UIView
     {
         // MARK: - Init
         
@@ -49,20 +30,20 @@ public extension UIViewController
             setup()
         }
         
-        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         
         func setup()
         {
             backgroundColor = UIColor(white: 0, alpha: 0.25)
             alpha = 0
-            autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             activityView.startAnimating()
             addSubview(activityView)
         }
         
         
-        private override func layoutSubviews()
+        fileprivate override func layoutSubviews()
         {
             super.layoutSubviews()
             
@@ -70,35 +51,35 @@ public extension UIViewController
         }
     }
     
-    func cover(duration: Double = 0.25, hideActivityView: Bool = false, completion: (() -> ())? = nil)
+    func cover(_ duration: Double = 0.25, hideActivityView: Bool = false, completion: (() -> ())? = nil)
     {
-        guard view.subviewsOfType(CoverView).isEmpty else { return }
+        guard view.subviewsOfType(CoverView.self).isEmpty else { return }
         
         let coverView = CoverView(frame: view.bounds)
 
-        coverView.activityView.hidden = hideActivityView
+        coverView.activityView.isHidden = hideActivityView
         
         view.addSubview(coverView)
         
-        UIView.animateWithDuration(duration,
+        UIView.animate(withDuration: duration,
             animations: {
                 coverView.alpha = 1
-            }) { _ in completion?() }
+            }, completion: { _ in completion?() }) 
 
     }
     
-    public func uncover(duration: Double = 0.25, completion: (() -> ())? = nil)
+    public func uncover(_ duration: Double = 0.25, completion: (() -> ())? = nil)
     {
-        let coverViews = view.subviewsOfType(CoverView)
+        let coverViews = view.subviewsOfType(CoverView.self)
         
-        UIView.animateWithDuration(duration,
+        UIView.animate(withDuration: duration,
             animations: {
             coverViews.forEach { $0.alpha = 0 }
-            }) { (completed) -> Void in
+            }, completion: { (completed) -> Void in
                 coverViews.forEach { $0.removeFromSuperview() }
                 
                 completion?()
-        }
+        }) 
     }
 }
 
@@ -106,7 +87,7 @@ public extension UIViewController
 
 extension UIViewController
 {
-    public func isViewLoadedAndShowing() -> Bool { return isViewLoaded() && view.window != nil }
+    public func isViewLoadedAndShowing() -> Bool { return isViewLoaded && view.window != nil }
 }
 
 // MARK: - Hierarchy
@@ -119,9 +100,9 @@ extension UIViewController
     - parameter type: the (super)type of view-controller to look for
     - returns: the first controller in the parent-hierarchy encountered that is of the specified type
     */
-    public func closestParentViewControllerOfType<T/* where T: UIViewController*/>(type: T.Type) -> T?
+    public func closestParentViewControllerOfType<T/* where T: UIViewController*/>(_ type: T.Type) -> T?
     {
-        return (parentViewController as? T) ?? parentViewController?.closestParentViewControllerOfType(type)
+        return (parent as? T) ?? parent?.closestParentViewControllerOfType(type)
     }
     
     /**
@@ -130,13 +111,13 @@ extension UIViewController
     - parameter type: the (super)type of controller to look for
     - returns: an array of view-controllers of the specified type
     */
-    public func closestChildViewControllersOfType<T>(type: T.Type) -> [T]
+    public func closestChildViewControllersOfType<T>(_ type: T.Type) -> [T]
     {
         var children = childViewControllers
         
         while !children.isEmpty
         {
-            let ts = children.cast(T)//mapFilter({ $0 as? T})
+            let ts = children.cast(T.self)//mapFilter({ $0 as? T})
             
             if !ts.isEmpty
             {
@@ -155,13 +136,13 @@ extension UIViewController
     - parameter type: the (super)type of controller to look for
     - returns: an array of view-controllers of the specified type
     */
-    public func anyChildViewControllersOfType<T>(type: T.Type) -> T?
+    public func anyChildViewControllersOfType<T>(_ type: T.Type) -> T?
     {
         var children = childViewControllers
         
         while !children.isEmpty
         {
-            let ts = children.cast(T)
+            let ts = children.cast(T.self)
             
             if !ts.isEmpty
             {

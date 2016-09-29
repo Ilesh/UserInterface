@@ -83,7 +83,7 @@ public extension UIColor
         return nil
     }
     
-    private var hsbComponents : (CGFloat, CGFloat, CGFloat, CGFloat)
+    fileprivate var hsbComponents : (CGFloat, CGFloat, CGFloat, CGFloat)
         {
             var h : CGFloat = 0
             var s : CGFloat = 0
@@ -97,7 +97,7 @@ public extension UIColor
     
     var hue: CGFloat { return hsbComponents.0 }
     
-    func withHue(hue: CGFloat) -> UIColor
+    func withHue(_ hue: CGFloat) -> UIColor
     {
         let hsba = hsbComponents
         
@@ -106,7 +106,7 @@ public extension UIColor
     
     var saturation: CGFloat { return hsbComponents.1 }
     
-    func withSaturation(saturation: CGFloat) -> UIColor
+    func withSaturation(_ saturation: CGFloat) -> UIColor
     {
         let hsba = hsbComponents
         
@@ -115,7 +115,7 @@ public extension UIColor
     
     var brightness: CGFloat { return hsbComponents.2 }
     
-    func withBrightness(brightness: CGFloat) -> UIColor
+    func withBrightness(_ brightness: CGFloat) -> UIColor
     {
         let hsba = hsbComponents
         
@@ -133,12 +133,12 @@ public extension UIColor
     
     var isDark: Bool { return brightness < 0.25 }
     
-    func brighterColor(factor: CGFloat = 0.5) -> UIColor
+    func brighterColor(_ factor: CGFloat = 0.5) -> UIColor
     {
         return withBrightness(brightness + (1 - brightness) * factor)
     }
     
-    func darkerColor(factor: CGFloat = 0.5) -> UIColor
+    func darkerColor(_ factor: CGFloat = 0.5) -> UIColor
     {
         return withBrightness(brightness - (brightness) * factor)
     }
@@ -157,9 +157,9 @@ public extension UIColor
         
         setFill()
         
-        UIBezierPath(rect: CGRect(origin: CGPointZero, size: size)).fill()
+        UIBezierPath(rect: CGRect(origin: CGPoint.zero, size: size)).fill()
         
-        return UIGraphicsGetImageFromCurrentImageContext()
+        return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }
 
@@ -472,7 +472,7 @@ extension UIColor
 {
     public convenience init?(named: String)
     {
-        if let rgb = NamedColors[named.lowercaseString]?.rgb
+        if let rgb = NamedColors[named.lowercased()]?.rgb
         {
             self.init(red:rgb.red, green: rgb.green, blue: rgb.blue, alpha: 1)
         }

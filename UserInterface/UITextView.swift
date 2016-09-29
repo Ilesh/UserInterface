@@ -16,7 +16,7 @@ extension UITextView
     
     public func heightThatFits(width fixedWidth: CGFloat) -> CGFloat
     {
-        let boundingSize = CGSize(width: fixedWidth, height: CGFloat.max)
+        let boundingSize = CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
         
         let bestFit = sizeThatFits(boundingSize)
         

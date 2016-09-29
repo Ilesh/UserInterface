@@ -13,7 +13,7 @@ import UIKit
 extension String
 {
     public func fontToFitSize(
-        sizeToFit: CGSize,
+        _ sizeToFit: CGSize,
         font: UIFont,
         lineBreakMode: NSLineBreakMode,
         minSize: CGFloat = 1,
@@ -21,7 +21,7 @@ extension String
     {
         let fontSize = font.pointSize
 
-        guard minSize < maxSize - 1 else { return font.fontWithSize(minSize) }
+        guard minSize < maxSize - 1 else { return font.withSize(minSize) }
         
         let paragraphStyle = NSMutableParagraphStyle()
         
@@ -32,7 +32,7 @@ extension String
         let aText = NSAttributedString(string: self, attributes: attributes)
         
         
-        let expectedSize = aText.boundingRectWithSize(sizeToFit, options: [ NSStringDrawingOptions.UsesLineFragmentOrigin ], context: nil).size
+        let expectedSize = aText.boundingRect(with: sizeToFit, options: [ NSStringDrawingOptions.usesLineFragmentOrigin ], context: nil).size
         
         debugPrint("sizeToFit: \(sizeToFit), expectedSize: \(expectedSize)")
         
@@ -46,23 +46,23 @@ extension String
             }
             else if fontSize < minSize
             {
-                return font.fontWithSize(minSize)
+                return font.withSize(minSize)
             }
             
             let newFontSize = floor((fontSize + minSize) / 2)
             
-            return fontToFitSize(sizeToFit, font: font.fontWithSize(newFontSize), lineBreakMode: lineBreakMode, minSize: minSize, maxSize: fontSize)
+            return fontToFitSize(sizeToFit, font: font.withSize(newFontSize), lineBreakMode: lineBreakMode, minSize: minSize, maxSize: fontSize)
         }
         else if sizeToFit.fits(expectedSize)
         {
             if fontSize >= maxSize
             {
-                return font.fontWithSize(maxSize)
+                return font.withSize(maxSize)
             }
             
             let newFontSize = ceil((fontSize + maxSize) / 2)
             
-             return fontToFitSize(sizeToFit, font: font.fontWithSize(newFontSize), lineBreakMode: lineBreakMode, minSize: fontSize, maxSize: maxSize)
+             return fontToFitSize(sizeToFit, font: font.withSize(newFontSize), lineBreakMode: lineBreakMode, minSize: fontSize, maxSize: maxSize)
         }
         else
         {

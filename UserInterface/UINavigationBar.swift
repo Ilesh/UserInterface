@@ -12,7 +12,7 @@ import UIKit
 
 extension UINavigationBar
 {
-    private func updateTitleTextAttributesFor(key: String, value: AnyObject?)
+    fileprivate func updateTitleTextAttributesFor(_ key: String, value: AnyObject?)
     {
         var newTitleTextAttributes = titleTextAttributes ?? [:]
         

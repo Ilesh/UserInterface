@@ -14,7 +14,7 @@ extension UIActivityIndicatorView
 {
     public convenience init(color: UIColor, animating: Bool = false, hidesWhenStopped: Bool = true)
     {
-        self.init(activityIndicatorStyle: .WhiteLarge)
+        self.init(activityIndicatorStyle: .whiteLarge)
         
         self.color = color
 

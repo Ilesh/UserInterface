@@ -15,18 +15,18 @@ public protocol CellsView
     
     func currentlyVisibleCells() -> Set<Cell>
     
-    func indexPathForView(view: UIView?) -> NSIndexPath?
+    func indexPathForView(_ view: UIView?) -> IndexPath?
 
-    func indexPathForCell(cell: Cell) -> NSIndexPath?
+    func indexPathForCell(_ cell: Cell) -> IndexPath?
     
-    func indexPathForLocation(location : CGPoint) -> NSIndexPath?
+    func indexPathForLocation(_ location : CGPoint) -> IndexPath?
 }
 
 // MARK: - Defaults
 
 extension CellsView
 {
-    public func indexPathForView(view: UIView?) -> NSIndexPath?
+    public func indexPathForView(_ view: UIView?) -> IndexPath?
     {
         guard let cellsView = self as? UIView else { return nil }
 
@@ -34,9 +34,9 @@ extension CellsView
         
         let superviews = view.superviews + [view]
 
-        if let myIndex = superviews.indexOf(cellsView)
+        if let myIndex = superviews.index(of: cellsView)
         {
-            if let cell = Array(superviews[myIndex..<superviews.count]).cast(Cell).first
+            if let cell = Array(superviews[myIndex..<superviews.count]).cast(Cell.self).first
             {
                 return indexPathForCell(cell)
             }
@@ -45,13 +45,13 @@ extension CellsView
         return nil
     }
 
-    public func indexPathForLocation(location : CGPoint) -> NSIndexPath?
+    public func indexPathForLocation(_ location : CGPoint) -> IndexPath?
     {
         guard let cellsView = self as? UIView else { return nil }
         
         for cell in currentlyVisibleCells()
         {
-            if cell.bounds.contains(cellsView.convertPoint(location, toView: cell))
+            if cell.bounds.contains(cellsView.convert(location, to: cell))
             {
                 return indexPathForCell(cell)
             }
@@ -69,7 +69,7 @@ extension UICollectionView : CellsView
     
     public func currentlyVisibleCells() -> Set<Cell>
     {
-        return Set(visibleCells())
+        return Set(visibleCells)
     }
 }
 

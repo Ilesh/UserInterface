@@ -14,6 +14,11 @@
 		8F33CEE01D41FD1A0085BD56 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33CEDF1D41FD1A0085BD56 /* UIView+Snapshot.swift */; };
 		8F55D79E1D4B5E7B00E58FBB /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D79D1D4B5E7B00E58FBB /* UIView+Color.swift */; };
 		8F55D7C31D4D4F1700E58FBB /* UIView+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7C21D4D4F1700E58FBB /* UIView+Size.swift */; };
+		8F55D7C91D4F3C5A00E58FBB /* UIView+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7C81D4F3C5A00E58FBB /* UIView+Drag.swift */; };
+		8F55D7CC1D4F8AC100E58FBB /* Dragging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F55D7CB1D4F8AC100E58FBB /* Dragging.storyboard */; };
+		8F55D7CE1D4F8AD500E58FBB /* DraggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7CD1D4F8AD500E58FBB /* DraggingViewController.swift */; };
+		8F55D7D71D50A0D600E58FBB /* UINavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7D61D50A0D600E58FBB /* UINavigationViewController.swift */; };
+		8F55D7D91D50A55200E58FBB /* RearrangableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7D81D50A55200E58FBB /* RearrangableView.swift */; };
 		8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */; };
 		8F8D90EA1C84632900142128 /* Arithmetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E61C84632900142128 /* Arithmetic.framework */; };
 		8F8D90EB1C84632900142128 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E71C84632900142128 /* Collections.framework */; };
@@ -55,6 +60,9 @@
 		8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875381C76295900181FA6 /* UIViewController.swift */; };
 		8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875391C76295900181FA6 /* UIBezierPath.swift */; };
 		8FD875CC1C762C2900181FA6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875CB1C762C2900181FA6 /* Error.swift */; };
+		8FFD923E1D50A9B400288972 /* RearrangableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD923D1D50A9B400288972 /* RearrangableViewDelegate.swift */; };
+		8FFD92421D50B6D800288972 /* Rearrange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FFD92411D50B6D800288972 /* Rearrange.storyboard */; };
+		8FFD92441D50B74200288972 /* RearrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD92431D50B74200288972 /* RearrangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,11 @@
 		8F33CEDF1D41FD1A0085BD56 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		8F55D79D1D4B5E7B00E58FBB /* UIView+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
 		8F55D7C21D4D4F1700E58FBB /* UIView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Size.swift"; sourceTree = "<group>"; };
+		8F55D7C81D4F3C5A00E58FBB /* UIView+Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Drag.swift"; sourceTree = "<group>"; };
+		8F55D7CB1D4F8AC100E58FBB /* Dragging.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dragging.storyboard; sourceTree = "<group>"; };
+		8F55D7CD1D4F8AD500E58FBB /* DraggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingViewController.swift; sourceTree = "<group>"; };
+		8F55D7D61D50A0D600E58FBB /* UINavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationViewController.swift; sourceTree = "<group>"; };
+		8F55D7D81D50A55200E58FBB /* RearrangableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangableView.swift; sourceTree = "<group>"; };
 		8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedCollectionViewController.swift; sourceTree = "<group>"; };
 		8F8D90E61C84632900142128 /* Arithmetic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arithmetic.framework; path = Carthage/Build/iOS/Arithmetic.framework; sourceTree = "<group>"; };
 		8F8D90E71C84632900142128 /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
@@ -137,6 +150,9 @@
 		8FD875381C76295900181FA6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8FD875391C76295900181FA6 /* UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
 		8FD875CB1C762C2900181FA6 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		8FFD923D1D50A9B400288972 /* RearrangableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangableViewDelegate.swift; sourceTree = "<group>"; };
+		8FFD92411D50B6D800288972 /* Rearrange.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rearrange.storyboard; sourceTree = "<group>"; };
+		8FFD92431D50B74200288972 /* RearrangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +194,10 @@
 				8FA50D841CAD2CFE005D28B6 /* AppDelegate.swift */,
 				8FA50D861CAD2CFE005D28B6 /* ViewController.swift */,
 				8FA50D881CAD2CFE005D28B6 /* Main.storyboard */,
+				8F55D7CB1D4F8AC100E58FBB /* Dragging.storyboard */,
+				8F55D7CD1D4F8AD500E58FBB /* DraggingViewController.swift */,
+				8FFD92411D50B6D800288972 /* Rearrange.storyboard */,
+				8FFD92431D50B74200288972 /* RearrangeViewController.swift */,
 				8FA50D8B1CAD2CFE005D28B6 /* Assets.xcassets */,
 				8FA50D8D1CAD2CFE005D28B6 /* LaunchScreen.storyboard */,
 				8FA50D901CAD2CFE005D28B6 /* Info.plist */,
@@ -237,7 +257,11 @@
 				8F33CEDD1D41FC0C0085BD56 /* UIView+Convenience.swift */,
 				8F55D79D1D4B5E7B00E58FBB /* UIView+Color.swift */,
 				8F55D7C21D4D4F1700E58FBB /* UIView+Size.swift */,
+				8F55D7C81D4F3C5A00E58FBB /* UIView+Drag.swift */,
+				8F55D7D81D50A55200E58FBB /* RearrangableView.swift */,
+				8FFD923D1D50A9B400288972 /* RearrangableViewDelegate.swift */,
 				8FD875381C76295900181FA6 /* UIViewController.swift */,
+				8F55D7D61D50A0D600E58FBB /* UINavigationViewController.swift */,
 				8FD875CB1C762C2900181FA6 /* Error.swift */,
 				8FD875391C76295900181FA6 /* UIBezierPath.swift */,
 				8FD875101C76293800181FA6 /* UserInterface.h */,
@@ -331,14 +355,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Christian Otkjær";
 				TargetAttributes = {
 					8FA50D811CAD2CFE005D28B6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					8FD8750C1C76293800181FA6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					8FD875161C76293800181FA6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -371,6 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA50D8F1CAD2CFE005D28B6 /* LaunchScreen.storyboard in Resources */,
+				8FFD92421D50B6D800288972 /* Rearrange.storyboard in Resources */,
+				8F55D7CC1D4F8AC100E58FBB /* Dragging.storyboard in Resources */,
 				8FA50D8C1CAD2CFE005D28B6 /* Assets.xcassets in Resources */,
 				8FA50D8A1CAD2CFE005D28B6 /* Main.storyboard in Resources */,
 			);
@@ -398,7 +426,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F55D7CE1D4F8AD500E58FBB /* DraggingViewController.swift in Sources */,
 				8FA50D871CAD2CFE005D28B6 /* ViewController.swift in Sources */,
+				8FFD92441D50B74200288972 /* RearrangeViewController.swift in Sources */,
 				8FA50D851CAD2CFE005D28B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +445,7 @@
 				8F33CEDE1D41FC0C0085BD56 /* UIView+Convenience.swift in Sources */,
 				8FD875481C76295900181FA6 /* UITableView.swift in Sources */,
 				8FD8754C1C76295900181FA6 /* UIBezierPath.swift in Sources */,
+				8F55D7D91D50A55200E58FBB /* RearrangableView.swift in Sources */,
 				8FD875431C76295900181FA6 /* UIKitLocalizedString.swift in Sources */,
 				8F55D79E1D4B5E7B00E58FBB /* UIView+Color.swift in Sources */,
 				8FD875401C76295900181FA6 /* UIEdgeInsets.swift in Sources */,
@@ -426,6 +457,8 @@
 				8F33CEDA1D41F9F30085BD56 /* UIView+Hierarchy.swift in Sources */,
 				8FD875491C76295900181FA6 /* UITextView.swift in Sources */,
 				8FD8753D1C76295900181FA6 /* UICollectionView.swift in Sources */,
+				8F55D7C91D4F3C5A00E58FBB /* UIView+Drag.swift in Sources */,
+				8FFD923E1D50A9B400288972 /* RearrangableViewDelegate.swift in Sources */,
 				8FD875411C76295900181FA6 /* UIFont.swift in Sources */,
 				8FA50D7D1CAD287C005D28B6 /* CellsView.swift in Sources */,
 				8FD8753F1C76295900181FA6 /* UIDatePicker.swift in Sources */,
@@ -434,6 +467,7 @@
 				8F79390A1D1BF02E002FFAD1 /* ManagedCollectionViewController.swift in Sources */,
 				8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */,
 				8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */,
+				8F55D7D71D50A0D600E58FBB /* UINavigationViewController.swift in Sources */,
 				8FD875CC1C762C2900181FA6 /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,8 +518,8 @@
 		8FA50D921CAD2CFE005D28B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -494,14 +528,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterfaceDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		8FA50D931CAD2CFE005D28B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -510,6 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterfaceDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,8 +562,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -574,8 +612,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -595,6 +635,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -606,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -621,6 +663,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -628,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -642,6 +686,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterface";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

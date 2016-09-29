@@ -12,7 +12,7 @@ import UIKit
 
 extension UIButton
 {
-    public func centerTitleAndImageWithSpacing(spacing: CGFloat)
+    public func centerTitleAndImageWithSpacing(_ spacing: CGFloat)
     {
         let insetAmount = spacing / 2
         imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)

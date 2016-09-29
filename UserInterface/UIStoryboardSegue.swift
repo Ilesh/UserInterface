@@ -12,8 +12,8 @@ import UIKit
 
 public extension UIStoryboardSegue
 {
-    func destinationControllerAs<T>(type: T.Type) -> T?
+    func destinationControllerAs<T>(_ type: T.Type) -> T?
     {
-        return (destinationViewController as? T)
+        return (destination as? T)
     }
 }

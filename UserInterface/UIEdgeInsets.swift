@@ -12,7 +12,7 @@ import UIKit
 
 extension UIEdgeInsets
 {
-    public func inset(rect: CGRect) -> CGRect
+    public func inset(_ rect: CGRect) -> CGRect
     {
         return UIEdgeInsetsInsetRect(rect, self)
     }

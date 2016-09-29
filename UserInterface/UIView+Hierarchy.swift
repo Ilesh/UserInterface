@@ -23,7 +23,7 @@ public extension UIView
             view = view?.superview
         }
         
-        return superviews.reverse()
+        return superviews.reversed()
     }
     
     
@@ -33,7 +33,7 @@ public extension UIView
      - parameter type: the (super)type of view to look for
      - returns: the first superview in the hierarchy encountered that is of the specified type
      */
-    func closestSuperviewOfType<T>(type: T.Type) -> T?
+    func closestSuperviewOfType<T>(_ type: T.Type) -> T?
     {
         if let t = superview as? T
         {
@@ -41,13 +41,13 @@ public extension UIView
         }
         else
         {
-            return superview?.closestSuperviewOfType(T)
+            return superview?.closestSuperviewOfType(T.self)
         }
     }
     
-    func subviewsOfType<T>(type: T.Type) -> [T]
+    func subviewsOfType<T>(_ type: T.Type) -> [T]
     {
-        return subviews.reduce(subviews.cast(T), combine: { $0 + $1.subviewsOfType(T) } )
+        return subviews.reduce(subviews.cast(T.self), { $0 + $1.subviewsOfType(T.self) } )
     }
     
     /**
@@ -56,13 +56,13 @@ public extension UIView
      - parameter type: the (super)type of view to look for
      - returns: an array of views of the specified type
      */
-    func closestSubviewsOfType<T>(type: T.Type) -> [T]
+    func closestSubviewsOfType<T>(_ type: T.Type) -> [T]
     {
         var views = subviews
         
         while !views.isEmpty
         {
-            let Ts = views.cast(T)
+            let Ts = views.cast(T.self)
             
             if !Ts.isEmpty
             {
@@ -82,7 +82,7 @@ public extension UIView
      - parameter type: the type of view to look for
      - returns: first view of the specified type found
      */
-    func firstSubviewOfType<T>(type: T.Type) -> T?
+    func firstSubviewOfType<T>(_ type: T.Type) -> T?
     {
         return closestSubviewsOfType(type).first
     }

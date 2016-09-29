@@ -27,7 +27,7 @@ extension UIView
 
 public extension UIView
 {
-    func roundCorners(optionalRadius: CGFloat? = nil) -> CGFloat
+    func roundCorners(_ optionalRadius: CGFloat? = nil) -> CGFloat
     {
         var radius = min(bounds.midX, bounds.midY)
         
@@ -55,7 +55,7 @@ public extension UIView
         {
             if let color = newValue
             {
-                layer.borderColor = color.CGColor
+                layer.borderColor = color.cgColor
             }
             else
             {
@@ -67,7 +67,7 @@ public extension UIView
         {
             if let cgColor = layer.borderColor
             {
-                return UIColor(CGColor: cgColor)
+                return UIColor(cgColor: cgColor)
             }
             else
             {
@@ -90,9 +90,9 @@ public extension UIView
 {
     func anySubViewScrolling() -> Bool
     {
-        for scrollView in subviews.cast(UIScrollView)
+        for scrollView in subviews.cast(UIScrollView.self)
         {
-            if scrollView.dragging || scrollView.decelerating
+            if scrollView.isDragging || scrollView.isDecelerating
             {
                 return true
             }
@@ -117,7 +117,7 @@ public extension UIView
 {
     func findFirstResponder() -> UIView?
     {
-        if isFirstResponder()
+        if isFirstResponder
         {
             return self
         }
@@ -134,12 +134,11 @@ public extension UIView
     }
 }
 
-
 // MARK: - Frames
 
 public extension UIView
 {
-    func frameInView(view: UIView) -> CGRect
+    func frameInView(_ view: UIView) -> CGRect
     {
         return bounds.convert(fromView: self, toView: view)
     }

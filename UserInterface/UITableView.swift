@@ -17,7 +17,7 @@ extension UITableView
         endUpdates()
     }
     
-    public func moveScrollIndicatorToLeft(left: Bool = true, offset: CGFloat = 6)
+    public func moveScrollIndicatorToLeft(_ left: Bool = true, offset: CGFloat = 6)
     {
         let indicatorThickness = CGFloat(2)
         

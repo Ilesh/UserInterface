@@ -20,9 +20,9 @@ extension UIView
         
         if let context = UIGraphicsGetCurrentContext()
         {
-            layer.renderInContext(context)
+            layer.render(in: context)
         }
         
-        return UIGraphicsGetImageFromCurrentImageContext()
+        return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }

@@ -11,41 +11,41 @@ import UserInterface
 
 class TableViewController: UITableViewController
 {
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
         return 2
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return (section + 1) * 2
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = "\(indexPath.section) x \(indexPath.row)"
+        cell.textLabel?.text = "\((indexPath as NSIndexPath).section) x \((indexPath as NSIndexPath).row)"
         
         return cell
     }
     
     @IBOutlet weak var pathLabel: UILabel!
     
-    @IBAction func handleTap(gesture: UITapGestureRecognizer)
+    @IBAction func handleTap(_ gesture: UITapGestureRecognizer)
     {
         switch gesture.state
         {
-        case .Began, .Changed, .Ended:
+        case .began, .changed, .ended:
             
-            let location = gesture.locationInView(tableView)
+            let location = gesture.location(in: tableView)
             
             debugPrint("location: \(location)")
             
             if let indexPath = tableView.indexPathForLocation(location)
             {
             debugPrint("indexPath: \(indexPath)")
-            pathLabel.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
+            pathLabel.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
             }
             else
             {

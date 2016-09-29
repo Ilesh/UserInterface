@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aim-Zi-row">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rearrange-->
+        <scene sceneID="E8w-6r-69W">
+            <objects>
+                <viewController id="aim-Zi-row" customClass="RearrangeViewController" customModule="UserInterfaceDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sqD-aq-kdm"/>
+                        <viewControllerLayoutGuide type="bottom" id="s1r-Wz-t82"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hjq-Gg-Fqs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rkS-2s-pvW" customClass="RearrangableView" customModule="UserInterface">
+                                <rect key="frame" x="20" y="28" width="560" height="564"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUI-DL-zQw">
+                                        <rect key="frame" x="48" y="53" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiN-Dp-SKR">
+                                        <rect key="frame" x="222" y="153" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="0.86817904459999995" blue="0.071721377310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rkS-2s-pvW" firstAttribute="leading" secondItem="hjq-Gg-Fqs" secondAttribute="leadingMargin" id="FhD-fY-zov"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rkS-2s-pvW" secondAttribute="trailing" id="GMo-U5-8Gx"/>
+                            <constraint firstItem="rkS-2s-pvW" firstAttribute="top" secondItem="sqD-aq-kdm" secondAttribute="bottom" constant="8" symbolic="YES" id="Lv7-cg-Feh"/>
+                            <constraint firstItem="s1r-Wz-t82" firstAttribute="top" secondItem="rkS-2s-pvW" secondAttribute="bottom" constant="8" symbolic="YES" id="mE3-1v-XQd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rearrange" id="PDa-oc-vTP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="rearrangableView" destination="rkS-2s-pvW" id="s9h-hQ-o7I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lC-jC-nZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="410"/>
+        </scene>
+    </scenes>
+</document>

@@ -20,19 +20,19 @@ public enum UIKitLocalizeableString : String
 
     var localizedString: String
         {
-        return NSBundle(identifier: "com.apple.UIKit")?.localizedStringForKey(rawValue, value: nil, table: nil) ?? rawValue
+        return Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: rawValue, value: nil, table: nil) ?? rawValue
     }
 }
 
 /// localized System UIKit Strings, like "Search", "Cancel", "Done", "Delete"
-public func UIKitLocalizedString(key: String) -> String
+public func UIKitLocalizedString(_ key: String) -> String
 {
-    return NSBundle(identifier: "com.apple.UIKit")?.localizedStringForKey(key, value: nil, table: nil) ?? key
+    return Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: key, value: nil, table: nil) ?? key
 }
 
 /// localized System UIKit Strings, like "Search", "Cancel", "Done", "Delete"
-public func UIContactsLocalizedString(key: String) -> String
+public func UIContactsLocalizedString(_ key: String) -> String
 {
-    return NSBundle(identifier: "com.apple.ContactsUI")?.localizedStringForKey(key, value: nil, table: nil) ?? key
+    return Bundle(identifier: "com.apple.ContactsUI")?.localizedString(forKey: key, value: nil, table: nil) ?? key
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Section
+open class Section
 {
     let name: String
     
@@ -20,12 +20,12 @@ public class Section
         elements = [Any]()
     }
     
-    func addRecord(element: Any)
+    func addRecord(_ element: Any)
     {
         elements.append(element)
     }
     
-    func elementAtIndex(index: Int) -> Any?
+    func elementAtIndex(_ index: Int) -> Any?
     {
         guard index < elements.endIndex && index >= 0 else { return nil }
         
@@ -36,15 +36,15 @@ public class Section
 }
 
 
-public class SectionedElementsManager
+open class SectionedElementsManager
 {
     var delegate : SectionedElementsManagerDelegate?
     
     var sections : [Section]?
     
-    func elementAtIndexPath<Element>(indexPath: NSIndexPath?) -> Element?
+    func elementAtIndexPath<Element>(_ indexPath: IndexPath?) -> Element?
     {
-        guard let sectionIndex = indexPath?.section, let elementIndex = indexPath?.item else { return nil }
+        guard let sectionIndex = (indexPath as NSIndexPath?)?.section, let elementIndex = (indexPath as NSIndexPath?)?.item else { return nil }
         
         guard sectionIndex >= 0 && elementIndex >= 0 else { return nil }
         
@@ -55,17 +55,17 @@ public class SectionedElementsManager
         return sections[sectionIndex].elementAtIndex(elementIndex) as? Element
     }
     
-    func indexPathForRecord(element: Any?, comparator: (Any, Any) -> Bool) -> NSIndexPath?
+    func indexPathForRecord(_ element: Any?, comparator: (Any, Any) -> Bool) -> IndexPath?
     {
         guard let element = element else { return nil }
                 
-        for (sectionIndex, sectionInfo) in (sections ?? []).enumerate()
+        for (sectionIndex, sectionInfo) in (sections ?? []).enumerated()
         {
-            for (elementIndex, elementToTest) in (sectionInfo.elements ?? []).enumerate()
+            for (elementIndex, elementToTest) in sectionInfo.elements.enumerated()
             {
                 if comparator(elementToTest, element)
                 {
-                    return NSIndexPath(forItem: elementIndex, inSection: sectionIndex)
+                    return IndexPath(item: elementIndex, section: sectionIndex)
                 }
             }
         }
@@ -83,7 +83,7 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter indexPath: new indexPath of the element
      - note: Only the inserted element is reported. It is assumed that all elements that come after the affected element in the section are moved accordingly, but these moves are not reported.
      */
-    func manager(manager:SectionedElementsManager, didInsertElementAtIndexPath indexPath: NSIndexPath)
+    func manager(_ manager:SectionedElementsManager, didInsertElementAtIndexPath indexPath: IndexPath)
     
     /**
      Notifies the delegate that a element has been deleted from the fetched elements.
@@ -91,7 +91,7 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter indexPath: indexPath where the element used to reside
      - note: Only the deleted element is reported. It is assumed that all elements that come after the affected element in the section are moved accordingly, but these moves are not reported.
      */
-    func manager(manager:SectionedElementsManager, didDeleteElementAtIndexPath indexPath: NSIndexPath)
+    func manager(_ manager:SectionedElementsManager, didDeleteElementAtIndexPath indexPath: IndexPath)
     
     /**
      Notifies the delegate that an alerady fetched element has been moved from one indexpath to another.
@@ -100,7 +100,7 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter toIndexPath: indexPath where the element now resides
      - note: The Move element is reported when the changed attribute on the element is one of the sort descriptors used in the fetch request. An update of the element is assumed; no separate update message is reported to the delegate.
      */
-    func manager(manager: SectionedElementsManager, didMoveElementAtIndexPath atIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+    func manager(_ manager: SectionedElementsManager, didMoveElementAtIndexPath atIndexPath: IndexPath, toIndexPath: IndexPath)
     
     /**
      Notifies the delegate that an already fetched element has been updated.
@@ -109,7 +109,7 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter indexPath: indexPath of the updated element
      - note: The Update element is reported when a elements state changes, and the changed attributes are NOT part of the sort keys.
      */
-    func manager(manager: SectionedElementsManager, didUpdateElementAtIndexPath indexPath: NSIndexPath)
+    func manager(_ manager: SectionedElementsManager, didUpdateElementAtIndexPath indexPath: IndexPath)
     
     /**
      Notifies the delegate of inserted sections
@@ -119,7 +119,7 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter sectionIndex: the index at which the section was inserted
      - note: Changes on sections are reported before changes on elements
      */
-    func manager(manager: SectionedElementsManager, didInsertSectionAtIndex sectionIndex: Int)
+    func manager(_ manager: SectionedElementsManager, didInsertSectionAtIndex sectionIndex: Int)
     
     /**
      Notifies the delegate of deleted sections
@@ -127,17 +127,17 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
      - parameter sectionIndex: the index where the section used to reside
      - note: Changes on sections are reported before changes on elements
      */
-    func manager(manager: SectionedElementsManager, didDeleteSectionAtIndex sectionIndex: Int)
+    func manager(_ manager: SectionedElementsManager, didDeleteSectionAtIndex sectionIndex: Int)
     
     /**
      Notifies the delegate that section and element changes are about to be processed and notifications will be sent
      */
-    func managerWillChangeContent(manager: SectionedElementsManager)
+    func managerWillChangeContent(_ manager: SectionedElementsManager)
     
     /**
      Notifies the delegate that all section and element changes have been sent.
      */
-    func managerDidChangeContent(manager: SectionedElementsManager)
+    func managerDidChangeContent(_ manager: SectionedElementsManager)
     
     /* Asks the delegate to return the corresponding section index entry for a given section name.	Does not enable NSFetchedResultsController change tracking.
      If this method isn't implemented by the delegate, the default implementation returns the capitalized first letter of the section name (seee NSFetchedResultsController sectionIndexTitleForSectionName:)
@@ -150,14 +150,14 @@ public protocol SectionedElementsManagerDelegate : class // : NSObjectProtocol
 
 private let CellReuseIdentifier = "Cell"
 
-public class ManagedCollectionViewController: UICollectionViewController
+open class ManagedCollectionViewController: UICollectionViewController
 {
-    public var elementsManager : SectionedElementsManager?
+    open var elementsManager : SectionedElementsManager?
     {
         didSet { updateSectionedElementsManager(oldValue) }
     }
     
-    func updateSectionedElementsManager(oldManager : SectionedElementsManager?)
+    func updateSectionedElementsManager(_ oldManager : SectionedElementsManager?)
     {
         guard oldManager !== elementsManager else { return }
         
@@ -169,9 +169,9 @@ public class ManagedCollectionViewController: UICollectionViewController
     // MARK: - Delegate helpers
     
     /// Set this if you are updating the elements "manually", e.g. when rearranging cells
-    public var ignoreManagerChanges: Bool = false
+    open var ignoreManagerChanges: Bool = false
     
-    var blockOperation : NSBlockOperation?
+    var blockOperation : BlockOperation?
     var shouldReloadCollectionView = false { didSet { if shouldReloadCollectionView { blockOperation = nil } } }
 }
 
@@ -179,15 +179,15 @@ public class ManagedCollectionViewController: UICollectionViewController
 
 extension ManagedCollectionViewController: SectionedElementsManagerDelegate
 {
-    public func managerWillChangeContent(manager: SectionedElementsManager)
+    public func managerWillChangeContent(_ manager: SectionedElementsManager)
     {
         guard !ignoreManagerChanges else { return }
         
         shouldReloadCollectionView = false
-        blockOperation = NSBlockOperation()
+        blockOperation = BlockOperation()
     }
     
-    public func managerDidChangeContent(manager: SectionedElementsManager)
+    public func managerDidChangeContent(_ manager: SectionedElementsManager)
     {
         // Checks if we should reload the collection view to aleviate a bug @ http://openradar.appspot.com/12954582
         if shouldReloadCollectionView
@@ -200,7 +200,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         }
     }
     
-    public func manager(manager: SectionedElementsManager, didInsertSectionAtIndex sectionIndex: Int)
+    public func manager(_ manager: SectionedElementsManager, didInsertSectionAtIndex sectionIndex: Int)
     {
         guard !ignoreManagerChanges else { return }
         
@@ -209,7 +209,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         blockOperation?.addExecutionBlock { collectionView.insertSection( sectionIndex ) }
     }
     
-    public func manager(manager: SectionedElementsManager, didDeleteSectionAtIndex sectionIndex: Int)
+    public func manager(_ manager: SectionedElementsManager, didDeleteSectionAtIndex sectionIndex: Int)
     {
         guard !ignoreManagerChanges else { return }
         
@@ -218,15 +218,15 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         blockOperation?.addExecutionBlock { collectionView.deleteSection( sectionIndex ) }
     }
     
-    public func manager(manager: SectionedElementsManager, didInsertElementAtIndexPath indexPath: NSIndexPath)
+    public func manager(_ manager: SectionedElementsManager, didInsertElementAtIndexPath indexPath: IndexPath)
     {
         guard !ignoreManagerChanges else { return }
         
         guard let collectionView = collectionView else { return }
         
-        if collectionView.numberOfSections() > 0
+        if collectionView.numberOfSections > 0
         {
-            if collectionView.numberOfItemsInSection( indexPath.section ) == 0
+            if collectionView.numberOfItems( inSection: (indexPath as NSIndexPath).section ) == 0
             {
                 shouldReloadCollectionView = true
             }
@@ -241,7 +241,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         }
     }
     
-    public func manager(manager: SectionedElementsManager, didUpdateElementAtIndexPath indexPath: NSIndexPath)
+    public func manager(_ manager: SectionedElementsManager, didUpdateElementAtIndexPath indexPath: IndexPath)
     {
         guard !ignoreManagerChanges else { return }
         
@@ -250,13 +250,13 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         blockOperation?.addExecutionBlock { collectionView.reloadItemAtIndexPath( indexPath ) }
     }
     
-    public func manager(manager: SectionedElementsManager, didDeleteElementAtIndexPath indexPath: NSIndexPath)
+    public func manager(_ manager: SectionedElementsManager, didDeleteElementAtIndexPath indexPath: IndexPath)
     {
         guard !ignoreManagerChanges else { return }
         
         guard let collectionView = collectionView else { return }
         
-        if collectionView.numberOfItemsInSection( indexPath.section ) == 1
+        if collectionView.numberOfItems( inSection: (indexPath as NSIndexPath).section ) == 1
         {
             shouldReloadCollectionView = true
         }
@@ -266,7 +266,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         }
     }
     
-    public func manager(manager: SectionedElementsManager, didMoveElementAtIndexPath atIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+    public func manager(_ manager: SectionedElementsManager, didMoveElementAtIndexPath atIndexPath: IndexPath, toIndexPath: IndexPath)
     {
         guard !ignoreManagerChanges else { return }
         

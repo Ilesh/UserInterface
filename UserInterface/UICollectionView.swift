@@ -21,8 +21,8 @@ extension UICollectionViewScrollDirection : CustomDebugStringConvertible, Custom
         {
             switch self
             {
-            case .Vertical: return "Vertical"
-            case .Horizontal: return "Horizontal"
+            case .vertical: return "Vertical"
+            case .horizontal: return "Horizontal"
             }
     }
 }
@@ -37,13 +37,13 @@ extension UICollectionView
     //        return indexPathsForVisibleItems().flatMap{ self.cellForItemAtIndexPath($0) }
     //    }
     
-    public func indexPathForLocation(location : CGPoint) -> NSIndexPath?
+    public func indexPathForLocation(_ location : CGPoint) -> IndexPath?
     {
-        for cell in visibleCells()
+        for cell in visibleCells
         {
-            if cell.bounds.contains(convertPoint(location, toView: cell))
+            if cell.bounds.contains(convert(location, to: cell))
             {
-                return indexPathForCell(cell)
+                return indexPath(for: cell)
             }
         }
         
@@ -51,48 +51,48 @@ extension UICollectionView
     }
 }
 
-public class LERPCollectionViewLayout: UICollectionViewLayout
+open class LERPCollectionViewLayout: UICollectionViewLayout
 {
     public enum Alignment
     {
-        case Top, Bottom, Left, Right
+        case top, bottom, left, right
     }
     
-    public var alignment = Alignment.Left { didSet { if oldValue != alignment { invalidateLayout() } } }
+    open var alignment = Alignment.left { didSet { if oldValue != alignment { invalidateLayout() } } }
     
     public enum Axis
     {
-        case Vertical, Horizontal
+        case vertical, horizontal
     }
     
-    public var axis = Axis.Horizontal { didSet { if oldValue != axis { invalidateLayout() } } }
+    open var axis = Axis.horizontal { didSet { if oldValue != axis { invalidateLayout() } } }
     
     public enum Distribution
     {
-        case Fill, Stack
+        case fill, stack
     }
     
-    public var distribution = Distribution.Fill { didSet { if oldValue != distribution { invalidateLayout() } } }
+    open var distribution = Distribution.fill { didSet { if oldValue != distribution { invalidateLayout() } } }
     
-    private var attributes = Array<UICollectionViewLayoutAttributes>()
+    fileprivate var attributes = Array<UICollectionViewLayoutAttributes>()
     
-    override public func prepareLayout()
+    override open func prepare()
     {
-        super.prepareLayout()
+        super.prepare()
         
         attributes.removeAll()
         
-        if let sectionCount = collectionView?.numberOfSections()
+        if let sectionCount = collectionView?.numberOfSections
         {
             for section in 0..<sectionCount
             {
-                if let itemCount = collectionView?.numberOfItemsInSection(section)
+                if let itemCount = collectionView?.numberOfItems(inSection: section)
                 {
                     for item in 0..<itemCount
                     {
-                        let indexPath = NSIndexPath(forItem: item, inSection: section)
+                        let indexPath = IndexPath(item: item, section: section)
                         
-                        if let attrs = layoutAttributesForItemAtIndexPath(indexPath)
+                        if let attrs = layoutAttributesForItem(at: indexPath)
                         {
                             attributes.append(attrs)
                         }
@@ -102,33 +102,33 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
         }
     }
     
-    override public func collectionViewContentSize() -> CGSize
+    override open var collectionViewContentSize : CGSize
     {
         if var frame = attributes.first?.frame
         {
             for attributesForItemAtIndexPath in attributes
             {
-                frame.unionInPlace(attributesForItemAtIndexPath.frame)
+                frame.union(attributesForItemAtIndexPath.frame)
             }
             
             return CGSize(width: frame.right, height: frame.top)
         }
         
-        return CGSizeZero
+        return CGSize.zero
     }
     
-    override public func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool
+    override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool
     {
         return collectionView?.bounds != newBounds
     }
     
-    override public func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]?
+    override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?
     {
         var attributesForElementsInRect = [UICollectionViewLayoutAttributes]()
         
         for attributesForItemAtIndexPath in attributes
         {
-            if CGRectIntersectsRect(attributesForItemAtIndexPath.frame, rect)
+            if attributesForItemAtIndexPath.frame.intersects(rect)
             {
                 attributesForElementsInRect.append(attributesForItemAtIndexPath)
             }
@@ -137,11 +137,11 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
         return attributesForElementsInRect
     }
     
-    func factorForIndexPath(indexPath: NSIndexPath) -> CGFloat
+    func factorForIndexPath(_ indexPath: IndexPath) -> CGFloat
     {
-        if let itemCount = collectionView?.numberOfItemsInSection(indexPath.section)
+        if let itemCount = collectionView?.numberOfItems(inSection: (indexPath as NSIndexPath).section)
         {
-            let factor = itemCount > 1 ? CGFloat(indexPath.item) / (itemCount - 1) : 0
+            let factor = itemCount > 1 ? CGFloat((indexPath as NSIndexPath).item) / (itemCount - 1) : 0
             
             return factor
         }
@@ -149,24 +149,24 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
         return 0
     }
     
-    func zIndexForIndexPath(indexPath: NSIndexPath) -> Int
+    func zIndexForIndexPath(_ indexPath: IndexPath) -> Int
     {
-        if let selectedItem = collectionView?.indexPathsForSelectedItems()?.first?.item,
-            let itemCount = collectionView?.numberOfItemsInSection(indexPath.section)
+        if let selectedItem = (collectionView?.indexPathsForSelectedItems?.first as NSIndexPath?)?.item,
+            let itemCount = collectionView?.numberOfItems(inSection: (indexPath as NSIndexPath).section)
         {
             
-            return itemCount - abs(selectedItem - indexPath.item)
+            return itemCount - abs(selectedItem - (indexPath as NSIndexPath).item)
         }
         
         return 0
     }
     
-    override public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes?
+    override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
     {
         if let collectionView = self.collectionView
             //            let attrs = super.layoutAttributesForItemAtIndexPath(indexPath)
         {
-            let attrs = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+            let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             
             let factor = factorForIndexPath(indexPath)
             
@@ -178,21 +178,21 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
             
             switch axis
             {
-            case .Horizontal:
+            case .horizontal:
                 higher.x += collectionView.bounds.width - l
-            case .Vertical:
+            case .vertical:
                 higher.y += collectionView.bounds.height - l
             }
             
             switch alignment
             {
-            case .Top, .Left:
+            case .top, .left:
                 break
                 
-            case .Bottom:
+            case .bottom:
                 swap(&higher.y, &lower.y)
                 
-            case .Right:
+            case .right:
                 swap(&higher.x, &lower.x)
             }
             
@@ -211,81 +211,81 @@ public class LERPCollectionViewLayout: UICollectionViewLayout
 
 extension UICollectionView
 {
-    private func indexSet(sections: [Int]) -> NSIndexSet
+    fileprivate func indexSet(_ sections: [Int]) -> IndexSet
     {
         let indexSet = NSMutableIndexSet()
         
-        sections.forEach { indexSet.addIndex($0)}
+        sections.forEach { indexSet.add($0)}
 
-        return indexSet
+        return indexSet as IndexSet
     }
     
-    public func insertSections(sections: Int...)
+    public func insertSections(_ sections: Int...)
     {
         insertSections( indexSet(sections) )
     }
     
-    public func insertSection(section: Int?)
+    public func insertSection(_ section: Int?)
     {
         guard let section = section else { return }
         
-        insertSections(NSIndexSet(index: section))
+        insertSections(IndexSet(integer: section))
     }
     
     
-    public func deleteSections(sections: Int...)
+    public func deleteSections(_ sections: Int...)
     {
         deleteSections( indexSet(sections) )
     }
     
-    public func deleteSection(section: Int?)
+    public func deleteSection(_ section: Int?)
     {
         guard let section = section else { return }
         
-        deleteSections(NSIndexSet(index: section))
+        deleteSections(IndexSet(integer: section))
     }
     
     
-    public func reloadSections(sections: Int...)
+    public func reloadSections(_ sections: Int...)
     {
         reloadSections( indexSet(sections) )
     }
     
-    public func reloadSection(section: Int?)
+    public func reloadSection(_ section: Int?)
     {
         guard let section = section else { return }
         
-        reloadSections(NSIndexSet(index: section))
+        reloadSections(IndexSet(integer: section))
     }
     
     // MARK: Items
     
-    public func insertItemAtIndexPath(indexPath: NSIndexPath?)
+    public func insertItemAtIndexPath(_ indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
-        insertItemsAtIndexPaths( [indexPath] )
+        insertItems( at: [indexPath] )
     }
     
-    public func deleteItemAtIndexPath(indexPath: NSIndexPath?)
+    public func deleteItemAtIndexPath(_ indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
-        deleteItemsAtIndexPaths( [indexPath] )
+        deleteItems( at: [indexPath] )
     }
     
-    public func reloadItemAtIndexPath(indexPath: NSIndexPath?)
+    public func reloadItemAtIndexPath(_ indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
-        reloadItemsAtIndexPaths( [indexPath] )
+        reloadItems( at: [indexPath] )
     }
     
-    public func moveItemFromIndexPath(indexPath: NSIndexPath?, toIndexPath newIndexPath: NSIndexPath?)
+    public func moveItemFromIndexPath(_ indexPath: IndexPath?, toIndexPath newIndexPath: IndexPath?)
     {
         guard let fromIndexPath = indexPath, let toIndexPath = newIndexPath else { return }
         
-        moveItemAtIndexPath(fromIndexPath, toIndexPath: toIndexPath)
+        moveItem(at: fromIndexPath, to: toIndexPath)
     }
 }
 
@@ -293,16 +293,16 @@ extension UICollectionView
 
 extension UICollectionView
 {
-    public func numberOfItemsInSection(section: Int?) -> Int
+    public func numberOfItemsInSection(_ section: Int?) -> Int
     {
         guard let section = section else { return 0 }
         
-        return numberOfItemsInSection(section)
+        return numberOfItems(inSection: section)
     }
 
-    public func numberOfItemsInSectionForIndexPath(indexPath: NSIndexPath?) -> Int
+    public func numberOfItemsInSectionForIndexPath(_ indexPath: IndexPath?) -> Int
     {
-        return numberOfItemsInSection(indexPath?.section)
+        return numberOfItemsInSection((indexPath as NSIndexPath?)?.section)
     }
 }
 
@@ -318,16 +318,16 @@ extension UICollectionViewController
 
 public extension UICollectionView
 {
-    public func performBatchUpdates(updates: (() -> Void)?)
+    public func performBatchUpdates(_ updates: (() -> Void)?)
     {
         performBatchUpdates(updates, completion: nil)
     }
     
-    public func reloadSection(section: Int)
+    public func reloadSection(_ section: Int)
     {
-        if section >= 0 && section < numberOfSections()
+        if section >= 0 && section < numberOfSections
         {
-            self.reloadSections(NSIndexSet(index: section))
+            self.reloadSections(IndexSet(integer: section))
         }
     }
 }
@@ -336,9 +336,9 @@ public extension UICollectionView
 
 public extension UICollectionView
 {
-    public func refreshVisible(animated: Bool = true, completion: ((Bool) -> ())? = nil)
+    public func refreshVisible(_ animated: Bool = true, completion: ((Bool) -> ())? = nil)
     {
-        let animations = { self.reloadItemsAtIndexPaths(self.indexPathsForVisibleItems()) }
+        let animations = { self.reloadItems(at: self.indexPathsForVisibleItems) }
         
         if animated
         {
@@ -356,30 +356,30 @@ public extension UICollectionView
 
 public extension UICollectionView
 {
-    var lastIndexPath : NSIndexPath?
+    var lastIndexPath : IndexPath?
         {
-            let section = numberOfSections() - 1
+            let section = numberOfSections - 1
             
             if section >= 0
             {
-                let item = numberOfItemsInSection(section) - 1
+                let item = numberOfItems(inSection: section) - 1
                 
                 if item >= 0
                 {
-                    return NSIndexPath(forItem: item, inSection: section)
+                    return IndexPath(item: item, section: section)
                 }
             }
             
             return nil
     }
     
-    var firstIndexPath : NSIndexPath?
+    var firstIndexPath : IndexPath?
         {
-            if numberOfSections() > 0
+            if numberOfSections > 0
             {
-                if numberOfItemsInSection(0) > 0
+                if numberOfItems(inSection: 0) > 0
                 {
-                    return NSIndexPath(forItem: 0, inSection: 0)
+                    return IndexPath(item: 0, section: 0)
                 }
             }
             
@@ -407,14 +407,14 @@ class PaginationCollectionViewFlowLayout: UICollectionViewFlowLayout
         super.init(coder:aDecoder)
     }
     
-    func applySelectedTransform(attributes: UICollectionViewLayoutAttributes?) -> UICollectionViewLayoutAttributes?
+    func applySelectedTransform(_ attributes: UICollectionViewLayoutAttributes?) -> UICollectionViewLayoutAttributes?
     {
         return attributes
     }
     
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]?
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?
     {
-        if let layoutAttributesList = super.layoutAttributesForElementsInRect(rect)
+        if let layoutAttributesList = super.layoutAttributesForElements(in: rect)
         {
             return layoutAttributesList.flatMap( self.applySelectedTransform )
         }
@@ -422,9 +422,9 @@ class PaginationCollectionViewFlowLayout: UICollectionViewFlowLayout
         return nil
     }
     
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes?
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
     {
-        let attributes = super.layoutAttributesForItemAtIndexPath(indexPath)
+        let attributes = super.layoutAttributesForItem(at: indexPath)
         
         return applySelectedTransform(attributes)
     }
@@ -435,7 +435,7 @@ class PaginationCollectionViewFlowLayout: UICollectionViewFlowLayout
     
     let flickVelocity : CGFloat = 0.3
     
-    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint
     {
         var contentOffset = proposedContentOffset
         

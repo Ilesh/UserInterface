@@ -12,12 +12,12 @@ import UIKit
 
 public extension UIBezierPath
 {
-    func translate(tx tx: CGFloat, ty: CGFloat)
+    func translate(tx: CGFloat, ty: CGFloat)
     {
-        applyTransform(CGAffineTransformMakeTranslation(tx, ty))
+        apply(CGAffineTransform(translationX: tx, y: ty))
     }
     
-    func translated(tx tx: CGFloat, ty: CGFloat) -> UIBezierPath
+    func translated(tx: CGFloat, ty: CGFloat) -> UIBezierPath
     {
         let path = self
         
@@ -26,22 +26,22 @@ public extension UIBezierPath
         return path
     }
     
-    func translate(v: CGVector)
+    func translate(_ v: CGVector)
     {
         translate(tx: v.dx, ty: v.dy)
     }
     
-    func translated(v: CGVector) -> UIBezierPath
+    func translated(_ v: CGVector) -> UIBezierPath
     {
         return translated(tx: v.dx, ty: v.dy)
     }
     
-    func rotate(angle: CGFloat)
+    func rotate(_ angle: CGFloat)
     {
-        applyTransform(CGAffineTransformMakeRotation(angle))
+        apply(CGAffineTransform(rotationAngle: angle))
     }
     
-    func rotated(angle: CGFloat) -> UIBezierPath
+    func rotated(_ angle: CGFloat) -> UIBezierPath
     {
         let path = self
         
@@ -50,12 +50,12 @@ public extension UIBezierPath
         return path
     }
     
-    func scale(sx sx: CGFloat, sy: CGFloat)
+    func scale(sx: CGFloat, sy: CGFloat)
     {
-        applyTransform(CGAffineTransformMakeScale(sx, sy))
+        apply(CGAffineTransform(scaleX: sx, y: sy))
     }
     
-    func scaled(sx sx: CGFloat, sy: CGFloat) -> UIBezierPath
+    func scaled(sx: CGFloat, sy: CGFloat) -> UIBezierPath
     {
         let path = self
         

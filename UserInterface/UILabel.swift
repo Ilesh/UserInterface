@@ -14,7 +14,7 @@ extension UILabel
 {
     public convenience init(text: String?, color: UIColor?)
     {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
         
         self.text = text
         
@@ -39,11 +39,11 @@ extension UILabel
      - parameter ifDifferent: if `true` the change is only animated if it differs from the already set text, defaults to `true`
      - parameter completion: closure that is called when the animation finishes.
     */
-    public func setText(text: String?, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
+    public func setText(_ text: String?, duration: Double, ifDifferent: Bool = true, completion: ((Bool) -> ())? = nil)
     {
         if (ifDifferent && text != self.text) || !ifDifferent
         {
-            UIView.transitionWithView(self, duration: duration, options: [.TransitionCrossDissolve], animations: { self.text = text }, completion: completion)
+            UIView.transition(with: self, duration: duration, options: [.transitionCrossDissolve], animations: { self.text = text }, completion: completion)
         }
         else
         {
