@@ -32,11 +32,6 @@ extension UICollectionViewScrollDirection : CustomDebugStringConvertible, Custom
 
 extension UICollectionView
 {
-    //    public func visibleCells() -> [UICollectionViewCell]
-    //    {
-    //        return indexPathsForVisibleItems().flatMap{ self.cellForItemAtIndexPath($0) }
-    //    }
-    
     public func indexPathForLocation(_ location : CGPoint) -> IndexPath?
     {
         for cell in visibleCells
@@ -220,12 +215,12 @@ extension UICollectionView
         return indexSet as IndexSet
     }
     
-    public func insertSections(_ sections: Int...)
+    public func insert(sectionsAt sections: Int...)
     {
         insertSections( indexSet(sections) )
     }
     
-    public func insertSection(_ section: Int?)
+    public func insert(sectionAt section: Int?)
     {
         guard let section = section else { return }
         
@@ -233,12 +228,12 @@ extension UICollectionView
     }
     
     
-    public func deleteSections(_ sections: Int...)
+    public func delete(sectionsAt sections: Int...)
     {
         deleteSections( indexSet(sections) )
     }
     
-    public func deleteSection(_ section: Int?)
+    public func delete(sectionAt section: Int?)
     {
         guard let section = section else { return }
         
@@ -246,12 +241,12 @@ extension UICollectionView
     }
     
     
-    public func reloadSections(_ sections: Int...)
+    public func reload(sectionsAt sections: Int...)
     {
         reloadSections( indexSet(sections) )
     }
     
-    public func reloadSection(_ section: Int?)
+    public func reload(sectionAt section: Int?)
     {
         guard let section = section else { return }
         
@@ -260,32 +255,32 @@ extension UICollectionView
     
     // MARK: Items
     
-    public func insertItemAtIndexPath(_ indexPath: IndexPath?)
+    public func insert(itemAt indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
         insertItems( at: [indexPath] )
     }
     
-    public func deleteItemAtIndexPath(_ indexPath: IndexPath?)
+    public func delete(itemAt indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
         deleteItems( at: [indexPath] )
     }
     
-    public func reloadItemAtIndexPath(_ indexPath: IndexPath?)
+    public func reload(itemAt indexPath: IndexPath?)
     {
         guard let indexPath = indexPath else { return }
         
         reloadItems( at: [indexPath] )
     }
     
-    public func moveItemFromIndexPath(_ indexPath: IndexPath?, toIndexPath newIndexPath: IndexPath?)
+    public func move(itemAt at: IndexPath?, to: IndexPath?)
     {
-        guard let fromIndexPath = indexPath, let toIndexPath = newIndexPath else { return }
+        guard let at = at, let to = to else { return }
         
-        moveItem(at: fromIndexPath, to: toIndexPath)
+        moveItem(at: at, to: to)
     }
 }
 
@@ -293,16 +288,16 @@ extension UICollectionView
 
 extension UICollectionView
 {
-    public func numberOfItemsInSection(_ section: Int?) -> Int
+    public func numberOfItems(inSection: Int?) -> Int
     {
-        guard let section = section else { return 0 }
+        guard let section = inSection else { return 0 }
         
         return numberOfItems(inSection: section)
     }
 
     public func numberOfItemsInSectionForIndexPath(_ indexPath: IndexPath?) -> Int
     {
-        return numberOfItemsInSection((indexPath as NSIndexPath?)?.section)
+        return numberOfItems(inSection: (indexPath as NSIndexPath?)?.section)
     }
 }
 

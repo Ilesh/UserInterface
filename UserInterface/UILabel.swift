@@ -43,7 +43,12 @@ extension UILabel
     {
         if (ifDifferent && text != self.text) || !ifDifferent
         {
-            UIView.transition(with: self, duration: duration, options: [.transitionCrossDissolve], animations: { self.text = text }, completion: completion)
+            UIView.transition(
+                with: self,
+                duration: duration,
+                options: [.transitionCrossDissolve],
+                animations: { self.text = text },
+                completion: completion)
         }
         else
         {
@@ -264,6 +269,7 @@ public class ClockLabel: UILabel
 }
 */
 
+ */
 //MARK: - Size Adjust
 
 extension UILabel
@@ -280,17 +286,17 @@ extension UILabel
         var q = Int(MaxFontSize)
         var p = Int(MinFontSize)
         
-        let constraintSize = CGSize(width: rect.width, height: CGFloat.max)
+        let constraintSize = CGSize(width: rect.width, height: CGFloat.greatestFiniteMagnitude)
         
         while(p <= q)
         {
             let currentSize = (p + q) / 2
             
-            font = UIFont(descriptor: font.fontDescriptor(), size: CGFloat(currentSize))
+            font = UIFont(descriptor: font.fontDescriptor, size: CGFloat(currentSize))
             
             let text = NSAttributedString(string: self.text!, attributes: [NSFontAttributeName:font])
             
-            let textRect = text.boundingRectWithSize(constraintSize, options: .UsesLineFragmentOrigin, context: nil)
+            let textRect = text.boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, context: nil)
             
             let labelSize = textRect.size
             
@@ -312,4 +318,3 @@ extension UILabel
         }
     }
 }
-*/

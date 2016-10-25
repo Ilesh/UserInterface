@@ -206,7 +206,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         
         guard let collectionView = collectionView else { return }
         
-        blockOperation?.addExecutionBlock { collectionView.insertSection( sectionIndex ) }
+        blockOperation?.addExecutionBlock { collectionView.insert(sectionAt: sectionIndex ) }
     }
     
     public func manager(_ manager: SectionedElementsManager, didDeleteSectionAtIndex sectionIndex: Int)
@@ -215,7 +215,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         
         guard let collectionView = collectionView else { return }
         
-        blockOperation?.addExecutionBlock { collectionView.deleteSection( sectionIndex ) }
+        blockOperation?.addExecutionBlock { collectionView.delete(sectionAt: sectionIndex) }
     }
     
     public func manager(_ manager: SectionedElementsManager, didInsertElementAtIndexPath indexPath: IndexPath)
@@ -232,7 +232,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
             }
             else
             {
-                blockOperation?.addExecutionBlock { collectionView.insertItemAtIndexPath( indexPath ) }
+                blockOperation?.addExecutionBlock { collectionView.insert(itemAt: indexPath ) }
             }
         }
         else
@@ -247,7 +247,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         
         guard let collectionView = collectionView else { return }
         
-        blockOperation?.addExecutionBlock { collectionView.reloadItemAtIndexPath( indexPath ) }
+        blockOperation?.addExecutionBlock { collectionView.reload(itemAt: indexPath ) }
     }
     
     public func manager(_ manager: SectionedElementsManager, didDeleteElementAtIndexPath indexPath: IndexPath)
@@ -262,7 +262,7 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         }
         else
         {
-            blockOperation?.addExecutionBlock { collectionView.deleteItemAtIndexPath( indexPath ) }
+            blockOperation?.addExecutionBlock { collectionView.delete(itemAt: indexPath ) }
         }
     }
     
@@ -272,6 +272,6 @@ extension ManagedCollectionViewController: SectionedElementsManagerDelegate
         
         guard let collectionView = collectionView else { return }
         
-        blockOperation?.addExecutionBlock { collectionView.moveItemFromIndexPath(atIndexPath, toIndexPath: toIndexPath ) }
+        blockOperation?.addExecutionBlock { collectionView.moveItem(at:atIndexPath, to: toIndexPath ) }
     }
 }

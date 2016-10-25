@@ -39,8 +39,6 @@
 		8FA50D9D1CAD3050005D28B6 /* Graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E91C84632900142128 /* Graphics.framework */; };
 		8FA50D9E1CAD3050005D28B6 /* Graphics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8D90E91C84632900142128 /* Graphics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FD875111C76293800181FA6 /* UserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD875101C76293800181FA6 /* UserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FD875181C76293800181FA6 /* UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD8750D1C76293800181FA6 /* UserInterface.framework */; };
-		8FD8751D1C76293800181FA6 /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8751C1C76293800181FA6 /* UserInterfaceTests.swift */; };
 		8FD8753A1C76295900181FA6 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875271C76295900181FA6 /* UIActivityIndicatorView.swift */; };
 		8FD8753B1C76295900181FA6 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875281C76295900181FA6 /* UIApplication.swift */; };
 		8FD8753C1C76295900181FA6 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD875291C76295900181FA6 /* UIButton.swift */; };
@@ -67,13 +65,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		8FA50D961CAD3046005D28B6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FD875041C76293800181FA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8FD8750C1C76293800181FA6;
-			remoteInfo = UserInterface;
-		};
-		8FD875191C76293800181FA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8FD875041C76293800181FA6 /* Project object */;
 			proxyType = 1;
@@ -128,9 +119,6 @@
 		8FD8750D1C76293800181FA6 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD875101C76293800181FA6 /* UserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterface.h; sourceTree = "<group>"; };
 		8FD875121C76293800181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FD875171C76293800181FA6 /* UserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FD8751C1C76293800181FA6 /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceTests.swift; sourceTree = "<group>"; };
-		8FD8751E1C76293800181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FD875271C76295900181FA6 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		8FD875281C76295900181FA6 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		8FD875291C76295900181FA6 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -177,14 +165,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FD875141C76293800181FA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FD875181C76293800181FA6 /* UserInterface.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -213,7 +193,6 @@
 				8F8D90E91C84632900142128 /* Graphics.framework */,
 				8F91BA331C844427004CBDB9 /* Cartfile */,
 				8FD8750F1C76293800181FA6 /* UserInterface */,
-				8FD8751B1C76293800181FA6 /* UserInterfaceTests */,
 				8FA50D831CAD2CFE005D28B6 /* UserInterfaceDemo */,
 				8FD8750E1C76293800181FA6 /* Products */,
 			);
@@ -223,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				8FD8750D1C76293800181FA6 /* UserInterface.framework */,
-				8FD875171C76293800181FA6 /* UserInterfaceTests.xctest */,
 				8FA50D821CAD2CFE005D28B6 /* UserInterfaceDemo.app */,
 			);
 			name = Products;
@@ -268,15 +246,6 @@
 				8FD875121C76293800181FA6 /* Info.plist */,
 			);
 			path = UserInterface;
-			sourceTree = "<group>";
-		};
-		8FD8751B1C76293800181FA6 /* UserInterfaceTests */ = {
-			isa = PBXGroup;
-			children = (
-				8FD8751C1C76293800181FA6 /* UserInterfaceTests.swift */,
-				8FD8751E1C76293800181FA6 /* Info.plist */,
-			);
-			path = UserInterfaceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,24 +299,6 @@
 			productReference = 8FD8750D1C76293800181FA6 /* UserInterface.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8FD875161C76293800181FA6 /* UserInterfaceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8FD875241C76293800181FA6 /* Build configuration list for PBXNativeTarget "UserInterfaceTests" */;
-			buildPhases = (
-				8FD875131C76293800181FA6 /* Sources */,
-				8FD875141C76293800181FA6 /* Frameworks */,
-				8FD875151C76293800181FA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8FD8751A1C76293800181FA6 /* PBXTargetDependency */,
-			);
-			name = UserInterfaceTests;
-			productName = UserInterfaceTests;
-			productReference = 8FD875171C76293800181FA6 /* UserInterfaceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -366,9 +317,6 @@
 						CreatedOnToolsVersion = 7.2.1;
 						LastSwiftMigration = 0800;
 					};
-					8FD875161C76293800181FA6 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
 				};
 			};
 			buildConfigurationList = 8FD875071C76293800181FA6 /* Build configuration list for PBXProject "UserInterface" */;
@@ -385,7 +333,6 @@
 			projectRoot = "";
 			targets = (
 				8FD8750C1C76293800181FA6 /* UserInterface */,
-				8FD875161C76293800181FA6 /* UserInterfaceTests */,
 				8FA50D811CAD2CFE005D28B6 /* UserInterfaceDemo */,
 			);
 		};
@@ -409,13 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F91BA341C844427004CBDB9 /* Cartfile in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8FD875151C76293800181FA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,14 +412,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FD875131C76293800181FA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FD8751D1C76293800181FA6 /* UserInterfaceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -487,11 +419,6 @@
 			isa = PBXTargetDependency;
 			target = 8FD8750C1C76293800181FA6 /* UserInterface */;
 			targetProxy = 8FA50D961CAD3046005D28B6 /* PBXContainerItemProxy */;
-		};
-		8FD8751A1C76293800181FA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8FD8750C1C76293800181FA6 /* UserInterface */;
-			targetProxy = 8FD875191C76293800181FA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -690,26 +617,6 @@
 			};
 			name = Release;
 		};
-		8FD875251C76293800181FA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = UserInterfaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterfaceTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		8FD875261C76293800181FA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = UserInterfaceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.UserInterfaceTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -736,15 +643,6 @@
 			buildConfigurations = (
 				8FD875221C76293800181FA6 /* Debug */,
 				8FD875231C76293800181FA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8FD875241C76293800181FA6 /* Build configuration list for PBXNativeTarget "UserInterfaceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8FD875251C76293800181FA6 /* Debug */,
-				8FD875261C76293800181FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
