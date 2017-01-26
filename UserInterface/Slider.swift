@@ -37,12 +37,6 @@ public protocol SliderDelegate
     func slider(_ slider: Slider, didEndSlidingWithFinalValue finalValue: Float)
     
     func slider(_ slider: Slider, willAnimateWithAnimator animator: SliderAnimator)
-    
-    //    func slider(_ slider: Slider, thumbTextForValue value: Float) -> String
-    //
-    //    func slider(_ slider: Slider, thumbColorForValue value: Float) -> UIColor?
-    //
-    //    func slider(_ slider: Slider, barColorForValue value: Float) -> UIColor?
 }
 
 public class SliderAnimator
@@ -61,9 +55,6 @@ public class SliderAnimator
         self.animations = [animation]
         completions.append(completion)
     }
-    
-//    public internal(set) var completed: Bool = false
-//    public internal(set) var finished: Bool = false
     
     public func animatedAlongside(animation: @escaping ()->(), completion: ((Bool)->())?)
     {
@@ -187,7 +178,6 @@ open class RoundedSlider: UIView, Slider
         layoutSubviews(forValue: value)
     }
     
-    
     private func layoutSubviews(forValue value: Float)
     {
         trackView?.frame = trackFrame()
@@ -212,7 +202,6 @@ open class RoundedSlider: UIView, Slider
         return bounds
     }
     
-    
     func barFrame(forBounds bounds: CGRect? = nil, trackRect: CGRect? = nil, value: Float? = nil) -> CGRect
     {
         let bounds = bounds ?? self.bounds
@@ -224,7 +213,6 @@ open class RoundedSlider: UIView, Slider
         
         return CGRect(x: trackRect.minX, y: trackRect.minY, width: height + width, height: height)
     }
-    
     
     func thumbFrame(forBounds bounds: CGRect? = nil, trackRect: CGRect? = nil, barRect: CGRect? = nil, value: Float? = nil) -> CGRect
     {
@@ -271,7 +259,7 @@ open class RoundedSlider: UIView, Slider
     {
         var location = gesture.location(in: self)
         
-        let f = trackFrame()
+        let f = trackFrame().insetBy(dx: thumbFrame().width / 2, dy: 0)
         
         location.x = min(f.maxX, max(f.minX, location.x))
         
@@ -331,7 +319,6 @@ open class RoundedSlider: UIView, Slider
             trackingPan = false
         }
     }
-    
 }
 
 public protocol DiscreteSliderDelegate
