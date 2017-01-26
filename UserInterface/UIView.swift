@@ -27,6 +27,7 @@ extension UIView
 
 public extension UIView
 {
+    @discardableResult
     func roundCorners(_ optionalRadius: CGFloat? = nil) -> CGFloat
     {
         var radius = min(bounds.midX, bounds.midY)

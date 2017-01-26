@@ -1,18 +1,12 @@
 //
-//  UIViewController.swift
-//  Silverback
+//  UIView+Cover.swift
+//  UserInterface
 //
-//  Created by Christian Otkjær on 15/10/15.
-//  Copyright © 2015 Christian Otkjær. All rights reserved.
+//  Created by Christian Otkjær on 01/11/16.
+//  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
-import UIKit
-import Graphics
-import Collections
-
-//MARK: - Cover View
-
-public extension UIViewController
+public extension UIView
 {
     fileprivate class CoverView : UIView
     {
@@ -51,44 +45,44 @@ public extension UIViewController
         }
     }
     
-    func cover(_ duration: Double = 0.25, hideActivityView: Bool = false, completion: (() -> ())? = nil)
+    /// Covers this view
+    func cover(duration: Double = 0.25, hideActivityView: Bool = false, completion: (() -> ())? = nil)
     {
-        guard view.subviews(ofType: CoverView.self).isEmpty else { return }
+        guard subviews(ofType: CoverView.self).isEmpty else { return }
         
-        let coverView = CoverView(frame: view.bounds)
-
+        let coverView = CoverView(frame: bounds)
+        
         coverView.activityView.isHidden = hideActivityView
         
-        view.addSubview(coverView)
+        addSubview(coverView)
         
         UIView.animate(withDuration: duration,
-            animations: {
-                coverView.alpha = 1
-            }, completion: { _ in completion?() }) 
-
+                       animations: {
+                        coverView.alpha = 1
+            }, completion: { _ in completion?() })
+        
     }
     
-    public func uncover(_ duration: Double = 0.25, completion: (() -> ())? = nil)
+    /// Uncovers this view
+    public func uncover(duration: Double = 0.25, completion: (() -> ())? = nil)
     {
-        let coverViews = view.subviews(ofType: CoverView.self)
+        let coverViews = subviews(ofType: CoverView.self)
         
-        UIView.animate(withDuration: duration,
-            animations: {
-            coverViews.forEach { $0.alpha = 0 }
-            }, completion: { (completed) -> Void in
+        guard !coverViews.isEmpty else { completion?(); return }
+        
+        UIView.animate(
+            withDuration: duration,
+            animations:
+            {
+                coverViews.forEach { $0.alpha = 0 }
+            },
+            completion:
+            {
+                (completed) -> Void in
+                
                 coverViews.forEach { $0.removeFromSuperview() }
                 
                 completion?()
         }) 
     }
 }
-
-// MARK: - On screen
-
-extension UIViewController
-{
-    public func isViewLoadedAndShowing() -> Bool { return isViewLoaded && view.window != nil }
-}
-
-
-

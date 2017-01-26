@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="elJ-Wd-ptw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Slider-->
+        <scene sceneID="VBe-lK-M7L">
+            <objects>
+                <viewController id="elJ-Wd-ptw" customClass="SliderViewController" customModule="UserInterfaceDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIA-df-Eoo"/>
+                        <viewControllerLayoutGuide type="bottom" id="47h-M9-CKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0jT-SM-vws">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-TH-nOr" customClass="DiscreteSlider" customModule="UserInterface">
+                                <rect key="frame" x="14" y="318.5" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.86817904459999995" blue="0.071721377310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsN-vJ-IOY" customClass="RoundedSlider" customModule="UserInterface">
+                                <rect key="frame" x="16" y="132" width="343" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="cUe-Qp-bHn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLP-zn-DAY" customClass="RoundedSlider" customModule="UserInterface">
+                                <rect key="frame" x="16" y="470.5" width="343" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vg7-5S-lwp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zLP-zn-DAY" firstAttribute="centerY" secondItem="0jT-SM-vws" secondAttribute="centerY" multiplier="3:2" id="7Je-03-dPc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4n1-TH-nOr" secondAttribute="trailing" id="85O-43-g5L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lsN-vJ-IOY" secondAttribute="trailing" id="8EJ-3I-Bqy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zLP-zn-DAY" secondAttribute="trailing" id="Axl-kn-TqW"/>
+                            <constraint firstItem="4n1-TH-nOr" firstAttribute="centerY" secondItem="0jT-SM-vws" secondAttribute="centerY" id="QfQ-I7-PPz"/>
+                            <constraint firstItem="4n1-TH-nOr" firstAttribute="leading" secondItem="0jT-SM-vws" secondAttribute="leadingMargin" id="Rd8-gr-XKL"/>
+                            <constraint firstItem="lsN-vJ-IOY" firstAttribute="centerY" secondItem="0jT-SM-vws" secondAttribute="centerY" multiplier="1:2" id="VZQ-ah-g88"/>
+                            <constraint firstItem="lsN-vJ-IOY" firstAttribute="leading" secondItem="0jT-SM-vws" secondAttribute="leadingMargin" id="VmR-tC-WDK"/>
+                            <constraint firstItem="zLP-zn-DAY" firstAttribute="leading" secondItem="0jT-SM-vws" secondAttribute="leadingMargin" id="ryG-Bd-BDy"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Slider" id="9XB-hD-5Mq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="slider" destination="zLP-zn-DAY" id="iCl-yB-KU5"/>
+                        <outlet property="topSlider" destination="lsN-vJ-IOY" id="f9G-5A-UhB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZZ-8P-P6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="44"/>
+        </scene>
+    </scenes>
+</document>

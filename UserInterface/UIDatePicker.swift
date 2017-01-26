@@ -14,7 +14,7 @@ extension UIDatePicker
 {
     public var titlesColor: UIColor?
         {
-        set { setValue(tintColor, forKey: "textColor") }
+        set { setValue(newValue ?? tintColor, forKey: "textColor") }
         get { return value(forKey: "textColor") as? UIColor }
     }
 }

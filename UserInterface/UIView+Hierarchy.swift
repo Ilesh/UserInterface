@@ -33,7 +33,7 @@ public extension UIView
      - parameter type: the (super)type of view to look for
      - returns: the first superview in the hierarchy encountered that is of the specified type
      */
-    func closestSuperviewOfType<T>(_ type: T.Type) -> T?
+    func closestSuperview<T>(ofType type: T.Type) -> T?
     {
         if let t = superview as? T
         {
@@ -41,13 +41,13 @@ public extension UIView
         }
         else
         {
-            return superview?.closestSuperviewOfType(T.self)
+            return superview?.closestSuperview(ofType: T.self)
         }
     }
     
-    func subviewsOfType<T>(_ type: T.Type) -> [T]
+    func subviews<T>(ofType type: T.Type) -> [T]
     {
-        return subviews.reduce(subviews.cast(T.self), { $0 + $1.subviewsOfType(T.self) } )
+        return subviews.reduce(subviews.cast(T.self), { $0 + $1.subviews(ofType: T.self) } )
     }
     
     /**
@@ -70,7 +70,6 @@ public extension UIView
             }
             
             views = views.flatMap { $0.subviews }
-            //            views = views.reduce([]) { $0 + $1.subviews }
         }
         
         return []
@@ -82,7 +81,7 @@ public extension UIView
      - parameter type: the type of view to look for
      - returns: first view of the specified type found
      */
-    func firstSubviewOfType<T>(_ type: T.Type) -> T?
+    func firstSubview<T>(ofType type: T.Type) -> T?
     {
         return closestSubviewsOfType(type).first
     }

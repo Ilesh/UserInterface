@@ -13,20 +13,20 @@ public protocol CellsView
 {
     associatedtype Cell : UIView
     
-    func currentlyVisibleCells() -> Set<Cell>
+    var visibleCells : [Cell] { get }
     
-    func indexPathForView(_ view: UIView?) -> IndexPath?
+    func path(forView view: UIView?) -> IndexPath?
 
-    func indexPathForCell(_ cell: Cell) -> IndexPath?
+    func path(forCell cell: Cell?) -> IndexPath?
     
-    func indexPathForLocation(_ location : CGPoint) -> IndexPath?
+    func path(forLocation location : CGPoint?) -> IndexPath?
 }
 
 // MARK: - Defaults
 
 extension CellsView
 {
-    public func indexPathForView(_ view: UIView?) -> IndexPath?
+    public func path(forView view: UIView?) -> IndexPath?
     {
         guard let cellsView = self as? UIView else { return nil }
 
@@ -38,22 +38,24 @@ extension CellsView
         {
             if let cell = Array(superviews[myIndex..<superviews.count]).cast(Cell.self).first
             {
-                return indexPathForCell(cell)
+                return path(forCell: cell)
             }
         }
         
         return nil
     }
 
-    public func indexPathForLocation(_ location : CGPoint) -> IndexPath?
+    public func path(forLocation location : CGPoint?) -> IndexPath?
     {
+        guard let location = location else { return nil }
+        
         guard let cellsView = self as? UIView else { return nil }
         
-        for cell in currentlyVisibleCells()
+        for cell in visibleCells
         {
             if cell.bounds.contains(cellsView.convert(location, to: cell))
             {
-                return indexPathForCell(cell)
+                return path(forCell: cell)
             }
         }
         
@@ -67,9 +69,11 @@ extension UICollectionView : CellsView
 {
     public typealias Cell = UICollectionViewCell
     
-    public func currentlyVisibleCells() -> Set<Cell>
+    public func path(forCell cell: Cell?) -> IndexPath?
     {
-        return Set(visibleCells)
+        guard let cell = cell else { return nil }
+        
+        return indexPath(for: cell)
     }
 }
 
@@ -78,10 +82,12 @@ extension UICollectionView : CellsView
 extension UITableView : CellsView
 {
     public typealias Cell = UITableViewCell
-    
-    public func currentlyVisibleCells() -> Set<Cell>
+
+    public func path(forCell cell: Cell?) -> IndexPath?
     {
-        return Set(visibleCells)
+        guard let cell = cell else { return nil }
+
+        return indexPath(for: cell)
     }
 }
 

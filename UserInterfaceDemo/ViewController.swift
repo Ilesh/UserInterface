@@ -24,7 +24,7 @@ class TableViewController: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        
         cell.textLabel?.text = "\((indexPath as NSIndexPath).section) x \((indexPath as NSIndexPath).row)"
         
         return cell
@@ -42,10 +42,10 @@ class TableViewController: UITableViewController
             
             debugPrint("location: \(location)")
             
-            if let indexPath = tableView.indexPathForLocation(location)
+            if let indexPath = tableView.path(forLocation: location)
             {
-            debugPrint("indexPath: \(indexPath)")
-            pathLabel.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+                debugPrint("indexPath: \(indexPath)")
+                pathLabel.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
             }
             else
             {

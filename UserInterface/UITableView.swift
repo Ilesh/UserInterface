@@ -33,23 +33,3 @@ extension UITableView
         }
     }
 }
-//
-////MARK: - IndexPath lookup
-//
-//extension UITableView
-//{
-//    public func indexPathForLocation(location : CGPoint) -> NSIndexPath?
-//    {
-//        for cell in visibleCells
-//        {
-//            let locationInCell = convertPoint(location, toView: cell)
-//            
-//            if cell.bounds.contains(locationInCell)
-//            {
-//                return indexPathForCell(cell)
-//            }
-//        }
-//        
-//        return nil
-//    }
-//}
