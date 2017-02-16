@@ -15,6 +15,15 @@
 		8F368B781E3A1E29002D881C /* Slider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F368B771E3A1E29002D881C /* Slider.storyboard */; };
 		8F368B7A1E3A51FC002D881C /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F368B791E3A51FC002D881C /* SliderViewController.swift */; };
 		8F368B7C1E3A72E9002D881C /* LayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F368B7B1E3A72E9002D881C /* LayerSlider.swift */; };
+		8F3C55AA1E542DED003EE70E /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55A91E542DED003EE70E /* CenteredCollectionViewFlowLayout.swift */; };
+		8F3C55AE1E543140003EE70E /* SubstitutionCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55AD1E543140003EE70E /* SubstitutionCollectionViewFlowLayout.swift */; };
+		8F3C55B01E5438D4003EE70E /* Centered.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F3C55AF1E5438D4003EE70E /* Centered.storyboard */; };
+		8F3C55B21E543908003EE70E /* CenteredCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55B11E543908003EE70E /* CenteredCollectionViewController.swift */; };
+		8F3C55B41E547E4B003EE70E /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55B31E547E4B003EE70E /* InfiniteScrollView.swift */; };
+		8F3C55B61E548505003EE70E /* Infinite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F3C55B51E548505003EE70E /* Infinite.storyboard */; };
+		8F3C55C41E55BD7D003EE70E /* CollectionViewGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55C31E55BD7D003EE70E /* CollectionViewGridLayout.swift */; };
+		8F3C55C61E55CB60003EE70E /* Grid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F3C55C51E55CB60003EE70E /* Grid.storyboard */; };
+		8F3C55C81E55CB7B003EE70E /* GridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C55C71E55CB7B003EE70E /* GridCollectionViewController.swift */; };
 		8F55D79E1D4B5E7B00E58FBB /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D79D1D4B5E7B00E58FBB /* UIView+Color.swift */; };
 		8F55D7C31D4D4F1700E58FBB /* UIView+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7C21D4D4F1700E58FBB /* UIView+Size.swift */; };
 		8F55D7C91D4F3C5A00E58FBB /* UIView+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55D7C81D4F3C5A00E58FBB /* UIView+Drag.swift */; };
@@ -109,6 +118,15 @@
 		8F368B771E3A1E29002D881C /* Slider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Slider.storyboard; sourceTree = "<group>"; };
 		8F368B791E3A51FC002D881C /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		8F368B7B1E3A72E9002D881C /* LayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerSlider.swift; sourceTree = "<group>"; };
+		8F3C55A91E542DED003EE70E /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		8F3C55AD1E543140003EE70E /* SubstitutionCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		8F3C55AF1E5438D4003EE70E /* Centered.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Centered.storyboard; sourceTree = "<group>"; };
+		8F3C55B11E543908003EE70E /* CenteredCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewController.swift; sourceTree = "<group>"; };
+		8F3C55B31E547E4B003EE70E /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
+		8F3C55B51E548505003EE70E /* Infinite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Infinite.storyboard; sourceTree = "<group>"; };
+		8F3C55C31E55BD7D003EE70E /* CollectionViewGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewGridLayout.swift; sourceTree = "<group>"; };
+		8F3C55C51E55CB60003EE70E /* Grid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Grid.storyboard; sourceTree = "<group>"; };
+		8F3C55C71E55CB7B003EE70E /* GridCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewController.swift; sourceTree = "<group>"; };
 		8F55D79D1D4B5E7B00E58FBB /* UIView+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
 		8F55D7C21D4D4F1700E58FBB /* UIView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Size.swift"; sourceTree = "<group>"; };
 		8F55D7C81D4F3C5A00E58FBB /* UIView+Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Drag.swift"; sourceTree = "<group>"; };
@@ -200,7 +218,12 @@
 				8FFD92431D50B74200288972 /* RearrangeViewController.swift */,
 				8F368B771E3A1E29002D881C /* Slider.storyboard */,
 				8F368B791E3A51FC002D881C /* SliderViewController.swift */,
+				8F3C55C51E55CB60003EE70E /* Grid.storyboard */,
+				8F3C55C71E55CB7B003EE70E /* GridCollectionViewController.swift */,
 				8FA50D8B1CAD2CFE005D28B6 /* Assets.xcassets */,
+				8F3C55AF1E5438D4003EE70E /* Centered.storyboard */,
+				8F3C55B11E543908003EE70E /* CenteredCollectionViewController.swift */,
+				8F3C55B51E548505003EE70E /* Infinite.storyboard */,
 				8FA50D8D1CAD2CFE005D28B6 /* LaunchScreen.storyboard */,
 				8FA50D901CAD2CFE005D28B6 /* Info.plist */,
 			);
@@ -242,6 +265,8 @@
 				8FB2E01C1DC89A60009036E9 /* UICollectionView+Refresh.swift */,
 				8FB2E0261DC8A0FC009036E9 /* LERPCollectionViewLayout.swift */,
 				8FB2E0221DC89C1B009036E9 /* PaginationCollectionViewFlowLayout.swift */,
+				8F3C55A91E542DED003EE70E /* CenteredCollectionViewFlowLayout.swift */,
+				8F3C55AD1E543140003EE70E /* SubstitutionCollectionViewFlowLayout.swift */,
 				8F7939091D1BF02E002FFAD1 /* ManagedCollectionViewController.swift */,
 				8FD8752B1C76295900181FA6 /* UIColor.swift */,
 				8FD8752C1C76295900181FA6 /* UIDatePicker.swift */,
@@ -272,6 +297,8 @@
 				8FD875391C76295900181FA6 /* UIBezierPath.swift */,
 				8F368B751E3A1C7E002D881C /* Slider.swift */,
 				8F368B7B1E3A72E9002D881C /* LayerSlider.swift */,
+				8F3C55B31E547E4B003EE70E /* InfiniteScrollView.swift */,
+				8F3C55C31E55BD7D003EE70E /* CollectionViewGridLayout.swift */,
 				8FD875101C76293800181FA6 /* UserInterface.h */,
 				8FD875121C76293800181FA6 /* Info.plist */,
 			);
@@ -374,12 +401,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3C55C61E55CB60003EE70E /* Grid.storyboard in Resources */,
+				8F3C55B61E548505003EE70E /* Infinite.storyboard in Resources */,
 				8FA50D8F1CAD2CFE005D28B6 /* LaunchScreen.storyboard in Resources */,
 				8FFD92421D50B6D800288972 /* Rearrange.storyboard in Resources */,
 				8F55D7CC1D4F8AC100E58FBB /* Dragging.storyboard in Resources */,
 				8FA50D8C1CAD2CFE005D28B6 /* Assets.xcassets in Resources */,
 				8FA50D8A1CAD2CFE005D28B6 /* Main.storyboard in Resources */,
 				8F368B781E3A1E29002D881C /* Slider.storyboard in Resources */,
+				8F3C55B01E5438D4003EE70E /* Centered.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,10 +428,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3C55C81E55CB7B003EE70E /* GridCollectionViewController.swift in Sources */,
 				8F55D7CE1D4F8AD500E58FBB /* DraggingViewController.swift in Sources */,
 				8F368B7A1E3A51FC002D881C /* SliderViewController.swift in Sources */,
 				8FA50D871CAD2CFE005D28B6 /* ViewController.swift in Sources */,
 				8FFD92441D50B74200288972 /* RearrangeViewController.swift in Sources */,
+				8F3C55B21E543908003EE70E /* CenteredCollectionViewController.swift in Sources */,
 				8FA50D851CAD2CFE005D28B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +446,7 @@
 				8FB2E01F1DC89AB4009036E9 /* UICollectionView+Paths.swift in Sources */,
 				8FD875461C76295900181FA6 /* UINavigationBar.swift in Sources */,
 				8FD8754B1C76295900181FA6 /* UIViewController.swift in Sources */,
+				8F3C55AE1E543140003EE70E /* SubstitutionCollectionViewFlowLayout.swift in Sources */,
 				8F33CEE01D41FD1A0085BD56 /* UIView+Snapshot.swift in Sources */,
 				8F33CEDE1D41FC0C0085BD56 /* UIView+Convenience.swift in Sources */,
 				8FD875481C76295900181FA6 /* UITableView.swift in Sources */,
@@ -432,11 +465,13 @@
 				8FD8753A1C76295900181FA6 /* UIActivityIndicatorView.swift in Sources */,
 				8FD875471C76295900181FA6 /* UIPickerView.swift in Sources */,
 				8FB2E0231DC89C1B009036E9 /* PaginationCollectionViewFlowLayout.swift in Sources */,
+				8F3C55AA1E542DED003EE70E /* CenteredCollectionViewFlowLayout.swift in Sources */,
 				8FD875451C76295900181FA6 /* UILayoutConstraintAxis.swift in Sources */,
 				8F33CEDA1D41F9F30085BD56 /* UIView+Hierarchy.swift in Sources */,
 				8FD875491C76295900181FA6 /* UITextView.swift in Sources */,
 				8FD8753D1C76295900181FA6 /* UICollectionView.swift in Sources */,
 				8F368B761E3A1C7E002D881C /* Slider.swift in Sources */,
+				8F3C55C41E55BD7D003EE70E /* CollectionViewGridLayout.swift in Sources */,
 				8F55D7C91D4F3C5A00E58FBB /* UIView+Drag.swift in Sources */,
 				8FFD923E1D50A9B400288972 /* RearrangableViewDelegate.swift in Sources */,
 				8FD875411C76295900181FA6 /* UIFont.swift in Sources */,
@@ -450,6 +485,7 @@
 				8FD8753E1C76295900181FA6 /* UIColor.swift in Sources */,
 				8F55D7D71D50A0D600E58FBB /* UINavigationViewController.swift in Sources */,
 				8FD875CC1C762C2900181FA6 /* Error.swift in Sources */,
+				8F3C55B41E547E4B003EE70E /* InfiniteScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
