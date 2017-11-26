@@ -12,7 +12,12 @@ import UIKit
 
 extension UINavigationBar
 {
-    fileprivate func updateTitleTextAttributesFor(_ key: String, value: AnyObject?)
+    fileprivate func updateTitleTextAttributesFor(_ key: String, value: Any?)
+    {
+        updateTitleTextAttributesFor(NSAttributedStringKey(rawValue: key), value: value)
+    }
+    
+    fileprivate func updateTitleTextAttributesFor(_ key: NSAttributedStringKey, value: Any?)
     {
         var newTitleTextAttributes = titleTextAttributes ?? [:]
         
@@ -25,12 +30,12 @@ extension UINavigationBar
         {
         get
         {
-            return titleTextAttributes?[NSForegroundColorAttributeName] as? UIColor
+            return titleTextAttributes?[NSAttributedStringKey.foregroundColor] as? UIColor
         }
         
         set
         {
-            updateTitleTextAttributesFor(NSForegroundColorAttributeName, value: newValue)
+            updateTitleTextAttributesFor(NSAttributedStringKey.foregroundColor, value: newValue)
         }
     }
     
@@ -38,12 +43,12 @@ extension UINavigationBar
         {
         get
         {
-            return titleTextAttributes?[NSFontAttributeName] as? UIFont
+            return titleTextAttributes?[NSAttributedStringKey.font] as? UIFont
         }
         
         set
         {
-            updateTitleTextAttributesFor(NSFontAttributeName, value: newValue)
+            updateTitleTextAttributesFor(NSAttributedStringKey.font, value: newValue)
         }
     }
 }

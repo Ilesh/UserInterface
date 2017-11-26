@@ -78,7 +78,7 @@ extension UIViewController
         return false
     }
     
-    public var visibleViewControllers : [UIViewController] { return presentedViewController?.visibleViewControllers ?? [self] + childViewControllers.flatMap({ $0.visibleViewControllers }) }
+    @objc public var visibleViewControllers : [UIViewController] { return presentedViewController?.visibleViewControllers ?? [self] + childViewControllers.flatMap({ $0.visibleViewControllers }) }
 }
 
 //MARK: - UINavigationController

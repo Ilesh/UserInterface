@@ -20,7 +20,7 @@ extension UIPickerView
             
             for row in 0..<dataSource.pickerView(self, numberOfRowsInComponent: component)
             {
-                let view = delegate.pickerView!(self, viewForRow: row, forComponent: component, reusing: nil)
+                guard let view = delegate.pickerView?(self, viewForRow: row, forComponent: component, reusing: nil) else { continue }
                 
                 let wantedSize = view.sizeThatFits(sizeToFit)
                 
@@ -31,4 +31,44 @@ extension UIPickerView
         
         return size
     }
+}
+
+private var selectorColorAssociationKey: UInt8 = 0
+
+extension UIPickerView
+{
+    @IBInspectable
+    open var selectorColor: UIColor?
+        {
+        get
+        {
+            return objc_getAssociatedObject(self, &selectorColorAssociationKey) as? UIColor
+        }
+        set
+        {
+            objc_setAssociatedObject(self, &selectorColorAssociationKey, newValue,
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+//    override open func didAddSubview(_ subview: UIView)
+//    {
+//        super.didAddSubview(subview)
+//    
+//        updateSelectorLine(subview)
+//    }
+//    
+//    func updateSelectorLine(_ subview: UIView)
+//    {
+//        guard subview.bounds.height < 1 else { return }
+//        
+//        subview.backgroundColor = selectorColor ?? subview.backgroundColor
+//    }
+//    
+//    override open func didMoveToWindow()
+//    {
+//        super.didMoveToWindow()
+//        
+//        subviews.forEach { updateSelectorLine($0) }
+//    }
 }

@@ -110,7 +110,7 @@ class DragHandler : NSObject
     
     var centerOffset : CGPoint?
     
-    func handleDragGesture(_ gesture:UILongPressGestureRecognizer)
+    @objc func handleDragGesture(_ gesture:UILongPressGestureRecognizer)
     {
         guard let view = view, let superview = view.superview else { return }
         

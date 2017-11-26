@@ -294,7 +294,7 @@ extension UILabel
             
             font = UIFont(descriptor: font.fontDescriptor, size: CGFloat(currentSize))
             
-            let text = NSAttributedString(string: self.text!, attributes: [NSFontAttributeName:font])
+            let text = NSAttributedString(string: self.text!, attributes: [NSAttributedStringKey.font:font])
             
             let textRect = text.boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, context: nil)
             

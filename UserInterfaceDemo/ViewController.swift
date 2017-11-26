@@ -52,7 +52,7 @@ class TableViewController: UITableViewController
                 pathLabel.text = "?"
             }
             
-            debugPrint("view : \(gesture.view)")
+            debugPrint("view : \(String(describing: gesture.view))")
             
         default:
             debugPrint("state: \(gesture.state)")

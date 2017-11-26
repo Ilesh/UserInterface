@@ -8,6 +8,7 @@
 
 import UIKit
 import Graphics
+import Collections
 
 /// A view that allows rearraning of its subviews
 open class RearrangableView: UIView
@@ -95,7 +96,7 @@ open class RearrangableView: UIView
     var snapshotView : UIView?
     var viewBeingRearranged : UIView?
     
-    func handleRearrangeGestureRecognizer(_ gesture:UILongPressGestureRecognizer)
+    @objc func handleRearrangeGestureRecognizer(_ gesture:UILongPressGestureRecognizer)
     {
         let point = gesture.location(in: self)
         
@@ -103,7 +104,7 @@ open class RearrangableView: UIView
         {
         case .began:
             
-            guard let view = subviews.reversed().find({ $0.frame.contains(point) }) else { return }
+            guard let view = subviews.reversed().find(where: { $0.frame.contains(point) }) else { return }
             
             guard privateDelegate.rearrangingShouldBeginForView(view) else { return }
             

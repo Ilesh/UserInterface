@@ -29,8 +29,8 @@ extension UIFont
         paragraphStyle.lineBreakMode = lineBreakMode
         
         let attributes = [
-            NSParagraphStyleAttributeName:paragraphStyle,
-            NSFontAttributeName: self
+            NSAttributedStringKey.paragraphStyle:paragraphStyle,
+            NSAttributedStringKey.font: self
         ]
         
         let aText = NSAttributedString(string: text, attributes: attributes)
@@ -90,7 +90,7 @@ extension String
         
         paragraphStyle.lineBreakMode = lineBreakMode
         
-        let attributes = [ NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:font]
+        let attributes = [ NSAttributedStringKey.paragraphStyle:paragraphStyle, NSAttributedStringKey.font:font]
         
         let aText = NSAttributedString(string: self, attributes: attributes)
         
