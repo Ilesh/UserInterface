@@ -27,7 +27,6 @@ extension UILabel
     }
 }
 
-
 //MARK: - Set Text Animated
 
 extension UILabel

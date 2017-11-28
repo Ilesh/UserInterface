@@ -177,7 +177,7 @@ extension UIView
     /// - note : To avoid memory leaks remember to set this to `nil` when the view is no longer needed or no longer should be draggable
     public var draggingDelegate : ViewDraggingDelegate?
         {
-        get { return dragHandlers.find{ $0.view == self }?.delegate }
+        get { return dragHandlers.first{ $0.view == self }?.delegate }
         
         set
         {

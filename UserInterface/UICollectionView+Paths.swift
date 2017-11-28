@@ -14,29 +14,19 @@ public extension UICollectionView
     {
         let section = numberOfSections - 1
         
-        if section >= 0
-        {
-            let item = numberOfItems(inSection: section) - 1
-            
-            if item >= 0
-            {
-                return IndexPath(item: item, section: section)
-            }
-        }
+        guard section >= 0 else { return nil }
         
-        return nil
+        let item = numberOfItems(inSection: section) - 1
+            
+        guard item >= 0 else { return nil }
+        
+        return IndexPath(item: item, section: section)
     }
     
     var firstIndexPath : IndexPath?
     {
-        if numberOfSections > 0
-        {
-            if numberOfItems(inSection: 0) > 0
-            {
-                return IndexPath(item: 0, section: 0)
-            }
-        }
+        guard numberOfSections > 0, numberOfItems(inSection: 0) > 0 else { return nil }
         
-        return nil
+        return IndexPath(item: 0, section: 0)
     }
 }

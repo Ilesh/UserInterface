@@ -104,7 +104,7 @@ open class RearrangableView: UIView
         {
         case .began:
             
-            guard let view = subviews.reversed().find(where: { $0.frame.contains(point) }) else { return }
+            guard let view = subviews.reversed().first(where: { $0.frame.contains(point) }) else { return }
             
             guard privateDelegate.rearrangingShouldBeginForView(view) else { return }
             
